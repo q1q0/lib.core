@@ -1,0 +1,25 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+
+.radio, .checkbox {
+    display: inline-block;
+    margin: 3px 0px 0px 0px;
+}
+
+.table>tbody>tr>td, .table>thead>tr>th {
+    padding: 0px;
+}
+
+table {
+    transform: rotateY(0deg);
+    -ms-transform: rotateY(0deg);
+}
+  
+.draggable-row-helper {
+    position: absolute;
+    z-index: 9999;
+    width: 100vw;
+    height: 24px;
+    border: 1px solid #888888;
+}

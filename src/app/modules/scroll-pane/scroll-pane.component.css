@@ -1,0 +1,8 @@
+.vt-scroll-pane {
+    overflow: auto;
+}
+.noscroll {
+    overflow: hidden !important;
+    overflow-y: hidden !important;
+    overflow-x: hidden !important;
+}

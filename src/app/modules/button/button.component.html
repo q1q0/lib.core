@@ -1,0 +1,20 @@
+<button [disabled]="disabled || !enabled"
+        [ngClass]="{'hidden': visible != true}"
+				[style.color]="fontColor"
+				[id]="id"
+				type="button" class="btn btn-default {{cssClass}}"
+				(mousedown)="onMouseDown($event)"
+				(click)="onClick($event)"
+        (contextmenu)="handleOnContextMenu($event)"
+        (blur)="handleOnBlur()"
+        [ngStyle]="styles"
+        [style.padding]="controlPadding"
+        [style.margin-top]="marginTop"
+        [style.margin-left]="marginLeft"
+        [style.margin-right]="marginRight"
+        [style.margin-bottom]="marginBottom"
+        [style.line-height]="lineHeight">
+	{{ text }}
+	<!-- allow children (in case user want to display html) -->
+	<ng-content></ng-content>
+</button>

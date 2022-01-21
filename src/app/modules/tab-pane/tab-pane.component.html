@@ -1,0 +1,24 @@
+<div
+  class="vt-tab-pane {{cssClass}}"
+  [ngClass]="{'tabs-left': tabPlacement === 'left'}"
+  [id]="id" (contextmenu)="handleOnContextMenu($event)"
+  (keydown)="handleKeydown($event)"
+  [style.height]="controlHeight"
+  >
+  <!-- Tab Navigation --->
+  <ul class="nav {{navTabs}}" role="tablist">
+    <li #tabNavItem *ngFor="let tab of tabs; let i=index" [ngClass]="{'active': selectedTabIndex === i}" role="presentation" tabindex="-1">
+      <a id="{{tab.id}}-title" href="javascript:void(0)" [ngClass]="{'disabled': tab.disabled, 'active': tab.active && !tab.disabled, 'focused': !tab.disabled && focusedTabIndex === i}" role="tab" (click)="handleSelectTab($event, i, tab.id)" tabindex="-1">{{tab.text}}</a>
+    </li>
+  </ul>
+
+  <!-- Tab Content -->
+  <div class="tab-content" [style.height]="controlHeight">
+    <ng-template [ngIf]="selectedTab != null">
+      <div role="tabpanel" class="vt-tab tabpane {{selectedTab.cssClass}}" [id]="selectedTab.id" [style.height]="controlHeight">
+          <ng-container *ngTemplateOutlet="selectedTab.content"></ng-container>
+      </div>
+    </ng-template>
+  </div>
+
+</div>

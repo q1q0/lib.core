@@ -1,0 +1,11 @@
+<div class="dropdown-container" bs-dropdown-container #bsDropdownContainer>
+    <div id="{{id}}" dropdown #myDropdown="bs-dropdown" [autoClose]="true">
+    <ul *dropdownMenu #dropdownMenu class="dropdown-menu popup-menu" role="menu" id="{{id}}_menus" (keydown)="handleKeydown($event)">
+      <ng-template ngFor [ngForOf]="menuItems" let-item>
+        <li *ngIf="item.text === '-' && item.display !== false" role="separator" class="divider"></li>
+        <li (mouseover)="dispSubmenu($event)" *ngIf="item.menuItems != null && item.menuItems.length > 0 && item.display !== false" class="dropdown-submenu" role="menuitem" (vtArrowOnMouseEnter)="dispSubmenu($event)" (vtArrowOnMouseLeave)="hideAllSubmenu($event)" vt-menu-item-comp [text]="item.text" id="{{item.id}}" [menuItems]="item.menuItems" [display]="item.display" [item]="item" [popupMenuId]="id"></li>
+        <li (mouseover)="dispSubmenu($event)" *ngIf="item.text !== '-' && (item.menuItems == null || item.menuItems.length === 0) && item.display !== false" role="menuitem" (vtArrowOnMouseEnter)="dispSubmenu($event)" (vtArrowOnMouseLeave)="hideAllSubmenu($event)" vt-menu-item-comp [text]="item.text" id="{{item.id}}" [menuItems]="item.menuItems" [display]="item.display" [item]="item" [popupMenuId]="id"></li>
+      </ng-template>
+    </ul>
+  </div>
+</div>

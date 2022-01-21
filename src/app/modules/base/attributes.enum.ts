@@ -1,0 +1,21 @@
+export enum AttributesEnum {
+  ID,
+  VISIBLE,
+  CLASS,
+  DISABLED,
+  ENABLED,
+  TEXT,
+  COLOR,
+  ON_COMMAND,
+  REQUIRE,
+  TITLE,
+  FONT_BOLD,
+  SELECTED,
+  BG_COLOR,
+  VALUE,
+  PATTERN,
+  MAX_LENGTH,
+  MAX,
+  MIN,
+  TEXT_EDITABLE
+}

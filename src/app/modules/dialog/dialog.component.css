@@ -1,0 +1,123 @@
+.dialog-centered {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+}
+
+@media (min-width: 768px) {
+  .modal-xl {
+    width: 90%;
+    max-width: 1200px;
+  }
+}
+
+.modal.modaless {
+  position: fixed;
+  right: auto;
+  bottom: auto;
+}
+
+.modal.modaless .modal-dialog {
+  margin: 0;
+}
+
+vt-dialog .modal-header {
+  padding: 5px 15px;
+}
+
+.vt-dialog.modal {
+  /* Need inline-block and right/bottom: auto, otherwise covers windows underneath */
+  display: inline-block;
+  right: auto;
+  bottom: auto;
+  overflow: visible;
+}
+
+.minimize {
+  display: none !important;
+}
+
+.maximize {
+  left: 0 !important;
+  width: 100% !important;
+  bottom: 34px !important;
+  top: 100px !important;
+}
+.maximize .modal-dialog {
+  width: 100% !important;
+  max-width: 100% !important;
+  height: 100% !important;
+}
+
+.maximize .modal-content {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+/* .maximize .modal-body {
+  height: 95% !important;
+} */
+
+.maximize .modal-content.ui-resizable{
+  left: 0 !important;
+}
+
+@media (min-width: 768px) {
+  /* Override bootstrap to prevent blocking other dialogs */
+  .modal-dialog {
+    margin: 0;
+
+    /* Need inline-block otherwise blocks windows underneath */
+    display: inline-block;
+  }
+}
+
+.modal-content {
+  overflow: hidden;
+}
+
+.modal-header .close {
+  padding: 3px;
+  margin-left: 3px;
+  border: ridge 1px;
+  border-radius: 4px;
+}
+
+.icon-minimize {
+  width: 14px;
+  height: 10px;
+  background-image: url("./minimize.png");
+  background-repeat: no-repeat;
+  background-size: 14px;
+}
+
+.icon-maximize {
+  width: 14px;
+  height: 10px;
+  background-image: url("./maximize.png");
+  background-repeat: no-repeat;
+  background-size: 14px;
+}
+
+.icon-unmaximize {
+  width: 14px;
+  height: 10px;
+  background-image: url("./restore.png");
+  background-repeat: no-repeat;
+  background-size: 14px;
+}
+
+.disabled-dialog{
+  position: absolute;
+  z-index: 10; /* Sit on top */
+  background-color: rgba(0,0,0,0.1); /* Black w/ opacity */
+  width: 100%;
+  height: 100%;
+}
+
+.backdrop{
+  width: 100vw;
+  height: 100vh;
+  opacity: 0;
+  background-color: #000;
+}

@@ -1,0 +1,49 @@
+.split-pane-divider {
+  background-image: linear-gradient(#eff1f1, #cad5db);
+  border: solid 1px #c0c0c0;
+  box-sizing: content-box;
+  overflow: hidden;
+  /* This BREAK IE9 splitpane resize, DO NOT USE */
+  /* filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#eff1f1',endColorstr='#cad5db'); */
+}
+
+.split-pane-divider .center {
+  margin-left: 0;
+}
+
+.split-pane-divider.horizontal {
+  margin: 0;
+  background: #cecece; /*IE9*/
+  background: linear-gradient(to bottom, #eff1f1, #cad5db);
+}
+
+.split-pane-divider.horizontal .arrow {
+  font-size: 10px;
+  line-height: 8px;
+}
+
+.split-pane-divider.horizontal .center {
+  position: relative;
+  left: calc(50% - 9px);
+  font-size: 15px;
+}
+
+.split-pane-divider.vertical {
+  width: 6px !important;
+  height: calc(100% - 12px) !important;
+  margin-top: 5px;
+  background: #cecece; /*IE9*/
+  background: linear-gradient(to right, #eff1f1, #cad5db);
+}
+
+.split-pane-divider.vertical:hover {
+  cursor: ew-resize;
+}
+
+.split-pane-divider.horizontal:hover {
+  cursor: ns-resize;
+}
+
+section.top-pane {
+  overflow: auto;
+}

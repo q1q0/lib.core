@@ -1,0 +1,288 @@
+<vt-popup-menu-container></vt-popup-menu-container>
+<div class="content">
+	<vt-popup-menu id="NgnsSCR_SoOrd_EntryConposi01_PomOrderRightClick" idName="サンプル右クリックメニュー">
+		<vt-menu-item id="NgnsSCR_SoOrd_EntryConposi01_MniChange" idName="変更" text="変更"></vt-menu-item>
+		<vt-menu-item id="NgnsSCR_SoOrd_EntryConposi01_MniAbolish" idName="廃止" text="廃止"></vt-menu-item>
+		<vt-menu-item id="NgnsSCR_SoOrd_EntryConposi01_MniSplitAbolish" idName="分割廃止" text="分割廃止"></vt-menu-item>
+		<vt-horizontal-separator></vt-horizontal-separator>
+		<vt-menu-item id="NgnsSCR_SoOrd_EntryConposi01_MniNgReason" idName="NG回答" text="NG回答"></vt-menu-item>
+		<vt-menu-item id="NgnsSCR_SoOrd_EntryConposi01_MniDelete" idName="削除" text="削除"></vt-menu-item>
+		<vt-horizontal-separator></vt-horizontal-separator>
+		<vt-menu text="回線追加">
+			<vt-menu-item id="NgnsSCR_SoOrd_EntryConposi01_MniBase" idName="ベース回線追加" text="ベース回線追加"></vt-menu-item>
+			<vt-menu-item id="NgnsSCR_SoOrd_EntryConposi01_MniPoi" idName="POI中継回線追加" text="POI中継回線追加"></vt-menu-item>
+		</vt-menu>
+	</vt-popup-menu>
+	<button type="button" id="popup-menu-button" (click)="showPopup()">Show Popup</button>
+	<h1>
+		Vivify Core Component Library
+	</h1>
+
+	<button (click)="lru()">LRU</button>
+	<button (click)="alert()">Alert</button>
+	<vt-text-field></vt-text-field>
+	<hr />
+	<vt-link text="I am a link!"></vt-link>
+	<br/>
+	<vt-label id="label-test" text="I am a label" fontBold="true" fontItalic="true" fontUnderline="true"></vt-label>
+
+	<h3>Tree Table test</h3>
+	<vt-tree-table #treeTable id="tree-table-test" [rowData]="someArrayOfData" [columnDefs]="treeColumnDefs"></vt-tree-table>
+	<hr/>
+	<button type="button" id="tree-table-button" (click)="addTreeTableData()">Add rows to tree table</button>
+	<hr/>
+	<h2>vt-button</h2>
+
+	<vt-button vtButtonCssClass="btn-primary" text="Click Me" (onCommand)="launchView()" controlWidth="200"></vt-button>
+
+	<div class="row">
+		<h2>vt-text-field</h2>
+		<vt-text-field id="txt-field-text" [editable]="false" cssClass="col-sm-1" text="Hello world"></vt-text-field>
+		<vt-text-field id="txt-field-blank" cssClass="col-sm-1" [focusOnActivation]="true"></vt-text-field>
+		<vt-text-field [maxLength]="5" id="textFieldMaxLength"></vt-text-field>
+		<vt-text-field id="txt-field-date" type="date"></vt-text-field>
+		<vt-text-field [disabled]="true" fontColorDisabled="#ccc" text="Disabled font color"></vt-text-field>
+	</div>
+
+	<h2>vt-panel</h2>
+
+	<h3>Grid Layout</h3>
+
+	<vt-panel layout="grid" cssClass='panel-1' borderColor="red" borderWidth="3">
+		<div [vtGridColumn]="4">Column 1</div>
+		<div [vtGridColumn]="4">Column 2</div>
+		<div [vtGridColumn]="4">Column 3</div>
+	</vt-panel>
+
+	<vt-check-box id="chkApple" [checked]="true" text="Apple"></vt-check-box>
+	<vt-check-box id="chkOrange" text="Orange"></vt-check-box>
+
+	<vt-radio-button [checked]="true" text="Lemon" value="1" group="grp-test" idName="grpLemon" id="grpLemo"></vt-radio-button>
+	<vt-radio-button text="Apple" value="2" group="grp-test" idName="grpApple" id="grpApple"></vt-radio-button>
+	<vt-radio-button text="Orange" value="3" group="grp-test" idName="grpOrange" id="grpOrange"></vt-radio-button>
+
+	<h3>Dropdown</h3><button (click)="setEnableComp(testCombo, 'false')">Disable via setEnable(false)</button>
+	<vt-combo-box #testCombo id="test-combobox" controlWidth="150">
+		<vt-list-box>
+			<vt-list-item text="" value=""></vt-list-item>
+			<vt-list-item text="Apple" value="1"></vt-list-item>
+			<vt-list-item text="Orange" value="2"></vt-list-item>
+		</vt-list-box>
+	</vt-combo-box>
+
+	<vt-combo-box id="test-combobox-disabled" controlWidth="150" [disabled]="true">
+		<vt-list-box>
+			<vt-list-item text="Apple" value="1"></vt-list-item>
+			<vt-list-item text="Orange" value="2"></vt-list-item>
+		</vt-list-box>
+	</vt-combo-box>
+
+	<br/>
+
+	<h3>Table test (with popup menu)</h3>
+	<vt-table [dataSource]="someArrayOfData" id="test-table" [rowCustomAttributeBuilder]="rowCustomAttributeBuilder">
+		<!-- column with text as header-->
+		<vt-table-column header="Name" [locked]="true">
+			<ng-template vt-table-cell let-row="row">{{row.firstName}} {{row.lastName}}</ng-template>
+		</vt-table-column>
+		<vt-table-column>
+			<!-- column with customer renderer as header -->
+			<ng-template vt-table-header>
+				<vt-check-box (onStateChange)="toggleSmoker()" text="Smoker"></vt-check-box>
+			</ng-template>
+			<ng-template vt-table-cell let-row="row">
+				<vt-check-box [checked]="row.smoker" text="Checkbox!!!"></vt-check-box>
+			</ng-template>
+		</vt-table-column>
+		<vt-locked-column>
+			<vt-header text="Crapper"></vt-header>
+			<ng-template vt-table-cell>
+				<vt-label text="locked" (onContextMenu)="testRightClickPriorToPopup()"></vt-label>
+			</ng-template>
+		</vt-locked-column>
+	</vt-table>
+	
+	<br/>
+	<h3>Table 2</h3>
+	<vt-table #table2>
+		<vt-locked-column>
+			<vt-header text="header1"></vt-header>
+		</vt-locked-column>
+		<vt-table-column>
+			<vt-header text="header2"></vt-header>
+		</vt-table-column>
+		<vt-table-column header="header3" [visible]="isHeader3Visible"></vt-table-column>
+		<vt-footer-row>
+			<ng-template vt-table-cell alignHorizontal="center">
+				Footer col 1
+			</ng-template>
+			<ng-template vt-table-cell alignHorizontal="left">
+				Footer col 2
+			</ng-template>
+			<ng-template vt-table-cell alignHorizontal="right">
+				Footer col 3
+			</ng-template>
+		</vt-footer-row>
+	</vt-table>
+	<hr />
+	<button (click)="toggleHeader3()">Toggle header3 ({{isHeader3Visible}})</button>
+	<br />
+	<h3>Dynamic table</h3>
+	<vt-table [dataSource]="dynamicTableDs">
+		<vt-locked-column>
+			<vt-header text="header1"></vt-header>
+			<ng-template vt-table-cell let-row="row" let-rowIndex="rowIndex">
+				{{rowIndex + 1}}
+			</ng-template>
+		</vt-locked-column>
+		<vt-table-column>
+			<vt-header text="header2"></vt-header>
+			<ng-template vt-table-cell let-row="row">
+				<vt-button text="Test"></vt-button>
+			</ng-template>
+		</vt-table-column>
+		<ng-template ngFor let-dynamicCol [ngForOf]="dynamicCols">
+			<vt-table-column header="{{dynamicCol.header}}">
+				<ng-template vt-table-cell let-row="row">
+					{{row.text}}					
+				</ng-template>
+			</vt-table-column>
+		</ng-template>
+	</vt-table>
+	<br/><button (click)="initDs()">Add dynamic columns</button>
+	<hr />
+
+
+	<h3>Table test sort</h3>
+	<vt-table [dataSource]="dataForSort">
+		<!-- column with text as header-->
+		<vt-table-column [locked]="true" header="No" alignHorizontal="right" controlWidth="50" dataType="number">
+			<ng-template vt-table-cell let-rowIndex="rowIndex">
+				{{rowIndex + 1}}
+			</ng-template>
+		</vt-table-column>
+		<vt-table-column [locked]="true" controlWidth="50">
+			<ng-template vt-table-cell let-rowIndex="rowIndex" let-row="row">
+				<vt-button text="select"></vt-button>
+			</ng-template>
+		</vt-table-column>
+		<vt-table-column header="Code" alignHorizontal="center" controlWidth="100">
+			<ng-template vt-table-cell let-rowIndex="rowIndex" let-row="row">
+				{{row}}
+			</ng-template>
+		</vt-table-column>
+	</vt-table>
+
+	<h3>TabPane test</h3>
+	<vt-tab-pane id="test-tab-pane">
+		<vt-tab text="tab1" id="tab-1">
+			<app-test-view></app-test-view>
+		</vt-tab>
+		<vt-tab text="tab2" id="tab-2">tab content 2</vt-tab>
+		<vt-tab text="tab3" id="tab-3">
+			<app-test-view2></app-test-view2>
+		</vt-tab>
+	</vt-tab-pane>
+
+	<h3>TabPane Left</h3>
+	<vt-tab-pane id="test-tab-pane-left" tabPlacement="left">
+		<vt-tab text="tab1" id="tab-1">tab content 1</vt-tab>
+		<vt-tab text="tab2" id="tab-2">tab content 2</vt-tab>
+		<vt-tab text="tab3" id="tab-3">tab content 3</vt-tab>
+	</vt-tab-pane>
+
+	<hr />
+
+	<h3>Horizontal Separator test</h3>
+	<vt-horizontal-separator borderColor="red" controlHeight="4"></vt-horizontal-separator>
+
+	<h3>Split pane (hor)</h3>
+	<vt-split-pane id="split-pane" controlHeight="200" controlWidth="400">
+		<vt-top>
+			<div id="test-content">I am top pane</div>
+			<vt-panel layout="grid">
+				<div [vtGridColumn]="4">Column 1</div>
+				<div [vtGridColumn]="4">Column 2</div>
+				<div [vtGridColumn]="4">Column 3</div>
+			</vt-panel>
+		</vt-top>
+		<vt-bottom>
+			<div id="test-content">I am botton pane</div>
+		</vt-bottom>
+	</vt-split-pane>
+	<h3>Split pane (vert)</h3>
+	<vt-split-pane id="split-pane" controlHeight="200" controlWidth="400" orientation="vertical">
+			<vt-top>
+				<div id="test-content">I am left pane</div>
+				<vt-panel layout="grid">
+					<div [vtGridColumn]="4">Column 1</div>
+					<div [vtGridColumn]="4">Column 2</div>
+					<div [vtGridColumn]="4">Column 3</div>
+				</vt-panel>
+			</vt-top>
+			<vt-bottom>
+				<div id="test-content">I am right pane</div>
+			</vt-bottom>
+		</vt-split-pane>
+	<vt-dynamic-component *ngFor="let compDef of messagesList" [elementDef]="compDef"></vt-dynamic-component>
+	<!-- <app-test-view></app-test-view> 
+	<app-test-view2></app-test-view2>  -->
+	<vt-label text="Label with children">
+		<div style="display:inline-block">
+			<vt-button text="Press me!!"></vt-button>
+		</div>
+	</vt-label>
+	<h3>Table with custom rows</h3>
+	<vt-table>
+		<vt-locked-column>
+			<vt-header text="header1"></vt-header>
+		</vt-locked-column>
+		<vt-table-column>
+			<vt-header text="header2"></vt-header>
+		</vt-table-column>
+		<vt-row>
+			<ng-template vt-table-cell>
+				<vt-cell text="table row 1 col 1" id="row1col1"></vt-cell>
+			</ng-template>
+			<ng-template vt-table-cell>
+				table row 1 col 2
+			</ng-template>
+		</vt-row>
+		<vt-row>
+			<ng-template vt-table-cell>
+				table row 2 col 1
+			</ng-template>
+			<ng-template vt-table-cell>
+				table row 2 col 2
+			</ng-template>
+		</vt-row>		
+	</vt-table>
+	<h2>Dynamic columns table</h2>
+	<vt-table [dataSource]="dynamicTableData" controlWidth="600" controlHeight="200" id="dynamicColumnTable" [rowCustomAttributeBuilder]="rowCustomAttributeBuilder" selectionMode="multiRow">
+		<!-- column with text as header-->
+		<vt-table-column header="Name" [locked]="true" alignHorizontal="left">
+			<ng-template vt-table-cell let-row="row">
+				<vt-label text="{{row.firstName + row.lastName}}"></vt-label>
+			</ng-template>
+		</vt-table-column>
+		<vt-table-column [locked]="true">
+			<!-- column with customer renderer as header -->
+			<ng-template vt-table-header>
+				<vt-check-box (onStateChange)="toggleSmoker()" text="Smoker"></vt-check-box>
+			</ng-template>
+			<ng-template vt-table-cell let-row="row">
+				<vt-check-box [checked]="row.smoker" text="Checkbox!!!"></vt-check-box>
+			</ng-template>
+		</vt-table-column>
+		<vt-table-column [locked]="true">
+			<vt-header text=""></vt-header>
+		</vt-table-column>
+		<ng-template ngFor let-column [ngForOf]="[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]">
+				<vt-table-column header="{{'dynamic header ' + column}}" alignHorizontal="right">
+					<ng-template vt-table-cell let-row="row" let-rowIndex="rowIndex" [onContextMenuCb]="handleOnContextMenuCb">
+						{{'dynamic data: ' + column + ':::' + rowIndex}}
+					</ng-template>
+				</vt-table-column>
+		 </ng-template>
+	</vt-table>
+</div>

@@ -1,0 +1,24 @@
+<span
+  [id]="id"
+  [title]="tooltip"
+  [ngClass]="{'hidden': visible != true}"
+  class="vt-label {{cssClass}} {{(disabled ===true) ? 'disabled':''}}"
+  [style.textAlign]="alignHorizontal"
+  [style.maxWidth]="controlWidth"
+  [style.padding]="controlPadding"
+  [style.border-style]="borderStyle"
+  [style.margin-left]="marginLeft"
+  [style.margin-right]="marginRight"
+  [style.margin-bottom]="marginBottom"
+  [style.margin-top]="marginTop"
+  [style.color]="fontColor"
+  [ngStyle]="styles"
+  (click)="handleOnClick()"
+  (contextmenu)="handleOnContextMenu($event)"
+  (mousedown)="onMouseDownLabel($event)">
+  <ng-template [ngIf]="spaceText === false">{{ text }}</ng-template>
+  <ng-template [ngIf]="spaceText === true">&nbsp;</ng-template>
+  <!-- has children?-->
+  <ng-content></ng-content>
+  <span *ngIf="innerhtml && innerhtml.length > 0" [innerHTML]="innerhtml"></span>
+</span>

@@ -1,0 +1,2978 @@
+[
+  {
+    "name": "KeyUtils",
+    "members": [
+      {
+        "name": "toMapKey",
+        "type": 1,
+        "modifiers": [
+          1
+        ],
+        "returnType": "string"
+      }
+    ]
+  },
+  {
+    "name": "AttributesEnum",
+    "members": [
+      {
+        "name": "ID",
+        "type": 0,
+        "modifiers": [
+          1
+        ]
+      },
+      {
+        "name": "VISIBLE",
+        "type": 0,
+        "modifiers": [
+          1
+        ]
+      },
+      {
+        "name": "CLASS",
+        "type": 0,
+        "modifiers": [
+          1
+        ]
+      },
+      {
+        "name": "DISABLED",
+        "type": 0,
+        "modifiers": [
+          1
+        ]
+      },
+      {
+        "name": "ENABLED",
+        "type": 0,
+        "modifiers": [
+          1
+        ]
+      },
+      {
+        "name": "TEXT",
+        "type": 0,
+        "modifiers": [
+          1
+        ]
+      },
+      {
+        "name": "COLOR",
+        "type": 0,
+        "modifiers": [
+          1
+        ]
+      },
+      {
+        "name": "ON_COMMAND",
+        "type": 0,
+        "modifiers": [
+          1
+        ]
+      },
+      {
+        "name": "REQUIRE",
+        "type": 0,
+        "modifiers": [
+          1
+        ]
+      },
+      {
+        "name": "TITLE",
+        "type": 0,
+        "modifiers": [
+          1
+        ]
+      },
+      {
+        "name": "FONT_BOLD",
+        "type": 0,
+        "modifiers": [
+          1
+        ]
+      },
+      {
+        "name": "SELECTED",
+        "type": 0,
+        "modifiers": [
+          1
+        ]
+      }
+    ]
+  },
+  {
+    "name": "DialogComponent",
+    "members": [
+      {
+        "name": "title",
+        "type": 0,
+        "modifiers": [],
+        "variableType": "String"
+      },
+      {
+        "name": "modal",
+        "type": 0,
+        "modifiers": [],
+        "variableType": "boolean"
+      },
+      {
+        "name": "centered",
+        "type": 0,
+        "modifiers": []
+      },
+      {
+        "name": "windowTitle",
+        "type": 0,
+        "modifiers": []
+      },
+      {
+        "name": "_center",
+        "type": 0,
+        "modifiers": [],
+        "variableType": "boolean"
+      },
+      {
+        "name": "modalSize",
+        "type": 0,
+        "modifiers": [],
+        "variableType": "string"
+      },
+      {
+        "name": "resizeable",
+        "type": 0,
+        "modifiers": [],
+        "variableType": "boolean"
+      },
+      {
+        "name": "modalConfig",
+        "type": 0,
+        "modifiers": [],
+        "variableType": "ModalOptions"
+      },
+      {
+        "name": "modalDialog",
+        "type": 0,
+        "modifiers": [],
+        "variableType": "ModalDirective"
+      },
+      {
+        "name": "viewContainer",
+        "type": 0,
+        "modifiers": [],
+        "variableType": "ViewContainerRef"
+      },
+      {
+        "name": "modalWidth",
+        "type": 0,
+        "modifiers": [],
+        "variableType": "number | string"
+      },
+      {
+        "name": "viewRouteUrl",
+        "type": 0,
+        "modifiers": [
+          2
+        ],
+        "variableType": "string"
+      },
+      {
+        "name": "setViewRouteUrl",
+        "type": 1,
+        "modifiers": [],
+        "returnType": ""
+      },
+      {
+        "name": "ngOnInit",
+        "type": 1,
+        "modifiers": [],
+        "returnType": ""
+      },
+      {
+        "name": "ngAfterViewInit",
+        "type": 1,
+        "modifiers": [],
+        "returnType": ""
+      },
+      {
+        "name": "getElement",
+        "type": 1,
+        "modifiers": [],
+        "returnType": "HTMLElement"
+      },
+      {
+        "name": "close",
+        "type": 1,
+        "modifiers": [],
+        "returnType": ""
+      },
+      {
+        "name": "toJson",
+        "type": 1,
+        "modifiers": [],
+        "returnType": "{}"
+      }
+    ],
+    "inheritFrom": "BaseComponent"
+  },
+  {
+    "name": "ComponentType",
+    "members": [
+      {
+        "name": "LABEL",
+        "type": 0,
+        "modifiers": [
+          1
+        ]
+      },
+      {
+        "name": "BUTTON",
+        "type": 0,
+        "modifiers": [
+          1
+        ]
+      },
+      {
+        "name": "TEXT_FIELD",
+        "type": 0,
+        "modifiers": [
+          1
+        ]
+      },
+      {
+        "name": "COMBOBOX",
+        "type": 0,
+        "modifiers": [
+          1
+        ]
+      },
+      {
+        "name": "CHECKBOX",
+        "type": 0,
+        "modifiers": [
+          1
+        ]
+      },
+      {
+        "name": "RADIO",
+        "type": 0,
+        "modifiers": [
+          1
+        ]
+      },
+      {
+        "name": "TEXTAREA",
+        "type": 0,
+        "modifiers": [
+          1
+        ]
+      }
+    ]
+  },
+  {
+    "name": "LabelComponent",
+    "members": [
+      {
+        "name": "alignHorizontal",
+        "type": 0,
+        "modifiers": [],
+        "variableType": "AlignHorizontal"
+      },
+      {
+        "name": "autoWrap",
+        "type": 0,
+        "modifiers": [],
+        "variableType": "boolean"
+      },
+      {
+        "name": "ngOnInit",
+        "type": 1,
+        "modifiers": [],
+        "returnType": ""
+      },
+      {
+        "name": "toJson",
+        "type": 1,
+        "modifiers": [],
+        "returnType": "{}"
+      },
+      {
+        "name": "onMouseDown",
+        "type": 1,
+        "modifiers": [],
+        "returnType": ""
+      }
+    ],
+    "inheritFrom": "BaseComponent"
+  },
+  {
+    "name": "ListItemDirective",
+    "members": [
+      {
+        "name": "value",
+        "type": 0,
+        "modifiers": [],
+        "variableType": "string"
+      },
+      {
+        "name": "text",
+        "type": 0,
+        "modifiers": [],
+        "variableType": "string"
+      }
+    ]
+  },
+  {
+    "name": "ListBoxDirective",
+    "members": [
+      {
+        "name": "listItems",
+        "type": 0,
+        "modifiers": [],
+        "variableType": "QueryList<ListItemDirective>"
+      }
+    ]
+  },
+  {
+    "name": "ValuePair",
+    "members": [
+      {
+        "name": "value",
+        "type": 0,
+        "modifiers": [],
+        "variableType": "any"
+      },
+      {
+        "name": "text",
+        "type": 0,
+        "modifiers": [],
+        "variableType": "string"
+      },
+      {
+        "name": "selected",
+        "type": 0,
+        "modifiers": [],
+        "variableType": "boolean"
+      }
+    ]
+  },
+  {
+    "name": "ComboBoxComponent",
+    "members": [
+      {
+        "name": "listBox",
+        "type": 0,
+        "modifiers": [],
+        "variableType": "ListBoxDirective"
+      },
+      {
+        "name": "listItems",
+        "type": 0,
+        "modifiers": [],
+        "variableType": "Array<ValuePair>"
+      },
+      {
+        "name": "selectedItem",
+        "type": 0,
+        "modifiers": [],
+        "variableType": "ValuePair"
+      },
+      {
+        "name": "selectedItemText",
+        "type": 0,
+        "modifiers": [],
+        "variableType": "string"
+      },
+      {
+        "name": "ngAfterViewInit",
+        "type": 1,
+        "modifiers": [],
+        "returnType": ""
+      },
+      {
+        "name": "initializeComboboxValues",
+        "type": 1,
+        "modifiers": [],
+        "returnType": ""
+      },
+      {
+        "name": "selectItem",
+        "type": 1,
+        "modifiers": [],
+        "returnType": ""
+      },
+      {
+        "name": "setSelectValue",
+        "type": 1,
+        "modifiers": [],
+        "returnType": ""
+      },
+      {
+        "name": "onInputClick",
+        "type": 1,
+        "modifiers": [],
+        "returnType": ""
+      },
+      {
+        "name": "setValue",
+        "type": 1,
+        "modifiers": [],
+        "returnType": ""
+      },
+      {
+        "name": "getValue",
+        "type": 1,
+        "modifiers": [],
+        "returnType": "any"
+      }
+    ],
+    "inheritFrom": "BaseComponent"
+  },
+  {
+    "name": "TextFieldComponent",
+    "members": [
+      {
+        "name": "editable",
+        "type": 0,
+        "modifiers": [],
+        "variableType": "boolean"
+      },
+      {
+        "name": "onTextChange",
+        "type": 0,
+        "modifiers": [],
+        "variableType": ""
+      },
+      {
+        "name": "ngOnInit",
+        "type": 1,
+        "modifiers": [],
+        "returnType": ""
+      },
+      {
+        "name": "ngAfterViewInit",
+        "type": 1,
+        "modifiers": [],
+        "returnType": ""
+      },
+      {
+        "name": "onChange",
+        "type": 1,
+        "modifiers": [],
+        "returnType": ""
+      },
+      {
+        "name": "toJson",
+        "type": 1,
+        "modifiers": [],
+        "returnType": "{}"
+      },
+      {
+        "name": "getLocalName",
+        "type": 1,
+        "modifiers": [],
+        "returnType": "string"
+      }
+    ],
+    "inheritFrom": "BaseComponent"
+  },
+  {
+    "name": "CheckboxComponent",
+    "members": [
+      {
+        "name": "checked",
+        "type": 0,
+        "modifiers": [],
+        "variableType": "boolean"
+      },
+      {
+        "name": "isChecked",
+        "type": 0,
+        "modifiers": []
+      },
+      {
+        "name": "onCommand",
+        "type": 0,
+        "modifiers": [],
+        "variableType": "EventEmitter<any>"
+      },
+      {
+        "name": "ngOnInit",
+        "type": 1,
+        "modifiers": [],
+        "returnType": ""
+      },
+      {
+        "name": "onClick",
+        "type": 1,
+        "modifiers": [],
+        "returnType": ""
+      },
+      {
+        "name": "onMouseDown",
+        "type": 1,
+        "modifiers": [],
+        "returnType": ""
+      },
+      {
+        "name": "getLocalName",
+        "type": 1,
+        "modifiers": [],
+        "returnType": "string"
+      },
+      {
+        "name": "getChecked",
+        "type": 1,
+        "modifiers": [],
+        "returnType": "boolean"
+      },
+      {
+        "name": "setChecked",
+        "type": 1,
+        "modifiers": [],
+        "returnType": ""
+      }
+    ],
+    "inheritFrom": "BaseComponent"
+  },
+  {
+    "name": "RadioButtonComponent",
+    "members": [
+      {
+        "name": "group",
+        "type": 0,
+        "modifiers": [],
+        "variableType": "string"
+      },
+      {
+        "name": "idName",
+        "type": 0,
+        "modifiers": [],
+        "variableType": "string"
+      },
+      {
+        "name": "value",
+        "type": 0,
+        "modifiers": [],
+        "variableType": "any"
+      },
+      {
+        "name": "isChecked",
+        "type": 0,
+        "modifiers": []
+      },
+      {
+        "name": "checked",
+        "type": 0,
+        "modifiers": [],
+        "variableType": "boolean"
+      },
+      {
+        "name": "onCommand",
+        "type": 0,
+        "modifiers": [],
+        "variableType": ""
+      },
+      {
+        "name": "ngOnInit",
+        "type": 1,
+        "modifiers": [],
+        "returnType": ""
+      },
+      {
+        "name": "onChange",
+        "type": 1,
+        "modifiers": [],
+        "returnType": ""
+      },
+      {
+        "name": "onClick",
+        "type": 1,
+        "modifiers": [],
+        "returnType": ""
+      },
+      {
+        "name": "onMouseDown",
+        "type": 1,
+        "modifiers": [],
+        "returnType": ""
+      },
+      {
+        "name": "getLocalName",
+        "type": 1,
+        "modifiers": [],
+        "returnType": "string"
+      },
+      {
+        "name": "getValue",
+        "type": 1,
+        "modifiers": [],
+        "returnType": "any"
+      },
+      {
+        "name": "getChecked",
+        "type": 1,
+        "modifiers": [],
+        "returnType": "boolean"
+      },
+      {
+        "name": "setChecked",
+        "type": 1,
+        "modifiers": [],
+        "returnType": ""
+      }
+    ],
+    "inheritFrom": "BaseComponent"
+  },
+  {
+    "name": "TextAreaComponent",
+    "members": [
+      {
+        "name": "ngOnInit",
+        "type": 1,
+        "modifiers": [],
+        "returnType": ""
+      },
+      {
+        "name": "getLocalName",
+        "type": 1,
+        "modifiers": [],
+        "returnType": "string"
+      }
+    ],
+    "inheritFrom": "BaseComponent"
+  },
+  {
+    "name": "ViewComponent",
+    "members": [
+      {
+        "name": "dialog",
+        "type": 0,
+        "modifiers": [],
+        "variableType": "DialogComponent"
+      },
+      {
+        "name": "routeUrl",
+        "type": 0,
+        "modifiers": [
+          2
+        ],
+        "variableType": "string"
+      },
+      {
+        "name": "routeDeactivated",
+        "type": 0,
+        "modifiers": [
+          2
+        ],
+        "variableType": "boolean"
+      },
+      {
+        "name": "mcos",
+        "type": 0,
+        "modifiers": [
+          2
+        ],
+        "variableType": "Set<string>"
+      },
+      {
+        "name": "setRouteUrl",
+        "type": 1,
+        "modifiers": [],
+        "returnType": ""
+      },
+      {
+        "name": "getRouteUrl",
+        "type": 1,
+        "modifiers": [],
+        "returnType": "string"
+      },
+      {
+        "name": "isRouteDeactivated",
+        "type": 1,
+        "modifiers": [],
+        "returnType": ""
+      },
+      {
+        "name": "ngAfterViewInit",
+        "type": 1,
+        "modifiers": [],
+        "returnType": ""
+      },
+      {
+        "name": "ngOnDestroy",
+        "type": 1,
+        "modifiers": [],
+        "returnType": ""
+      },
+      {
+        "name": "componentInitialize",
+        "type": 1,
+        "modifiers": [
+          3
+        ],
+        "returnType": ""
+      },
+      {
+        "name": "getTagName",
+        "type": 1,
+        "modifiers": [],
+        "returnType": "string"
+      },
+      {
+        "name": "bodyInit",
+        "type": 1,
+        "modifiers": [],
+        "returnType": ""
+      },
+      {
+        "name": "setElementAttribute",
+        "type": 1,
+        "modifiers": [],
+        "returnType": ""
+      },
+      {
+        "name": "setElementAttributeById",
+        "type": 1,
+        "modifiers": [],
+        "returnType": ""
+      },
+      {
+        "name": "setRadioGroupAttribute",
+        "type": 1,
+        "modifiers": [],
+        "returnType": ""
+      },
+      {
+        "name": "getElementAttributeById",
+        "type": 1,
+        "modifiers": [],
+        "returnType": "any"
+      },
+      {
+        "name": "initializeComboBoxValues",
+        "type": 1,
+        "modifiers": [],
+        "returnType": ""
+      },
+      {
+        "name": "setFocus",
+        "type": 1,
+        "modifiers": [],
+        "returnType": ""
+      },
+      {
+        "name": "setTitle",
+        "type": 1,
+        "modifiers": [],
+        "returnType": ""
+      },
+      {
+        "name": "close",
+        "type": 1,
+        "modifiers": [],
+        "returnType": ""
+      },
+      {
+        "name": "getLocalName",
+        "type": 1,
+        "modifiers": [],
+        "returnType": "string"
+      },
+      {
+        "name": "createMco",
+        "type": 1,
+        "modifiers": [],
+        "returnType": "any"
+      },
+      {
+        "name": "getMco",
+        "type": 1,
+        "modifiers": [],
+        "returnType": "any"
+      },
+      {
+        "name": "_createDynamicComponent",
+        "type": 1,
+        "modifiers": [],
+        "returnType": "BaseComponent"
+      },
+      {
+        "name": "_removeComponent",
+        "type": 1,
+        "modifiers": [],
+        "returnType": ""
+      },
+      {
+        "name": "toJson",
+        "type": 1,
+        "modifiers": [],
+        "returnType": "{}"
+      }
+    ],
+    "inheritFrom": "BaseComponent"
+  },
+  {
+    "name": "McoContainerService",
+    "members": [
+      {
+        "name": "activeViewsStack",
+        "type": 0,
+        "modifiers": [
+          2
+        ],
+        "variableType": "Array<ViewComponent>"
+      },
+      {
+        "name": "_mcoMap",
+        "type": 0,
+        "modifiers": [
+          2
+        ],
+        "variableType": "Map<string, any>"
+      },
+      {
+        "name": "getMco",
+        "type": 1,
+        "modifiers": [],
+        "returnType": "any"
+      },
+      {
+        "name": "registerMco",
+        "type": 1,
+        "modifiers": [],
+        "returnType": ""
+      },
+      {
+        "name": "removeMco",
+        "type": 1,
+        "modifiers": [],
+        "returnType": ""
+      },
+      {
+        "name": "registerView",
+        "type": 1,
+        "modifiers": [],
+        "returnType": ""
+      },
+      {
+        "name": "popLastActiveView",
+        "type": 1,
+        "modifiers": [],
+        "returnType": "ViewComponent"
+      },
+      {
+        "name": "removeView",
+        "type": 1,
+        "modifiers": [],
+        "returnType": ""
+      },
+      {
+        "name": "activeViewsCount",
+        "type": 1,
+        "modifiers": [],
+        "returnType": "number"
+      },
+      {
+        "name": "hasView",
+        "type": 1,
+        "modifiers": [],
+        "returnType": "boolean"
+      },
+      {
+        "name": "activeView",
+        "type": 1,
+        "modifiers": [],
+        "returnType": "ViewComponent"
+      },
+      {
+        "name": "getViewById",
+        "type": 1,
+        "modifiers": [],
+        "returnType": "ViewComponent"
+      }
+    ]
+  },
+  {
+    "name": "ClientEvent",
+    "members": [
+      {
+        "name": "_parameters",
+        "type": 0,
+        "modifiers": [
+          2
+        ],
+        "variableType": "Map<string, any>"
+      },
+      {
+        "name": "_attributes",
+        "type": 0,
+        "modifiers": [
+          2
+        ],
+        "variableType": "Map<string, any>"
+      },
+      {
+        "name": "_returnValue",
+        "type": 0,
+        "modifiers": [
+          2
+        ],
+        "variableType": "any"
+      },
+      {
+        "name": "_returnValueSet",
+        "type": 0,
+        "modifiers": [
+          2
+        ],
+        "variableType": "any"
+      },
+      {
+        "name": "getSource",
+        "type": 1,
+        "modifiers": [],
+        "returnType": "BaseComponent"
+      },
+      {
+        "name": "getEvent",
+        "type": 1,
+        "modifiers": [],
+        "returnType": "Event"
+      },
+      {
+        "name": "setParameter",
+        "type": 1,
+        "modifiers": [],
+        "returnType": ""
+      },
+      {
+        "name": "getParameter",
+        "type": 1,
+        "modifiers": [],
+        "returnType": "any"
+      },
+      {
+        "name": "setAttribute",
+        "type": 1,
+        "modifiers": [],
+        "returnType": ""
+      },
+      {
+        "name": "getAttribute",
+        "type": 1,
+        "modifiers": [],
+        "returnType": "any"
+      },
+      {
+        "name": "stopPropagation",
+        "type": 1,
+        "modifiers": [],
+        "returnType": ""
+      },
+      {
+        "name": "preventDefault",
+        "type": 1,
+        "modifiers": [],
+        "returnType": ""
+      },
+      {
+        "name": "setReturnValue",
+        "type": 1,
+        "modifiers": [],
+        "returnType": ""
+      },
+      {
+        "name": "getReturnValue",
+        "type": 1,
+        "modifiers": [],
+        "returnType": "any"
+      },
+      {
+        "name": "isReturnValueSet",
+        "type": 1,
+        "modifiers": [],
+        "returnType": "boolean"
+      }
+    ]
+  },
+  {
+    "name": "EventHandlerService",
+    "members": [
+      {
+        "name": "_clientEvent",
+        "type": 0,
+        "modifiers": [
+          2
+        ],
+        "variableType": "ClientEvent"
+      },
+      {
+        "name": "setClientEvent",
+        "type": 1,
+        "modifiers": [],
+        "returnType": "void"
+      },
+      {
+        "name": "getClientEvent",
+        "type": 1,
+        "modifiers": [],
+        "returnType": "ClientEvent"
+      }
+    ]
+  },
+  {
+    "name": "RequestService",
+    "members": [
+      {
+        "name": "retrieve",
+        "type": 1,
+        "modifiers": [],
+        "returnType": ""
+      },
+      {
+        "name": "send",
+        "type": 1,
+        "modifiers": [],
+        "returnType": ""
+      },
+      {
+        "name": "getResponseData",
+        "type": 1,
+        "modifiers": [],
+        "returnType": "any"
+      },
+      {
+        "name": "setResponseData",
+        "type": 1,
+        "modifiers": [],
+        "returnType": ""
+      }
+    ]
+  },
+  {
+    "name": "RouteNavigator",
+    "members": [
+      {
+        "name": "nagivate",
+        "type": 1,
+        "modifiers": [],
+        "returnType": ""
+      },
+      {
+        "name": "destroyRoute",
+        "type": 1,
+        "modifiers": [],
+        "returnType": ""
+      }
+    ]
+  },
+  {
+    "name": "SessionService",
+    "members": [
+      {
+        "name": "requestService",
+        "type": 0,
+        "modifiers": [
+          2
+        ],
+        "variableType": "RequestService"
+      },
+      {
+        "name": "routeNavigator",
+        "type": 0,
+        "modifiers": [
+          2
+        ],
+        "variableType": "RouteNavigator"
+      },
+      {
+        "name": "getMcoContainer",
+        "type": 1,
+        "modifiers": [],
+        "returnType": "McoContainerService"
+      },
+      {
+        "name": "getEventHandler",
+        "type": 1,
+        "modifiers": [],
+        "returnType": "EventHandlerService"
+      },
+      {
+        "name": "registerRequestService",
+        "type": 1,
+        "modifiers": [],
+        "returnType": ""
+      },
+      {
+        "name": "getRequestService",
+        "type": 1,
+        "modifiers": [],
+        "returnType": "RequestService"
+      },
+      {
+        "name": "registerRouteNavigatorService",
+        "type": 1,
+        "modifiers": [],
+        "returnType": ""
+      },
+      {
+        "name": "getRouteNavigatorService",
+        "type": 1,
+        "modifiers": [],
+        "returnType": "RouteNavigator"
+      }
+    ]
+  },
+  {
+    "name": "JavaUtils",
+    "members": [
+      {
+        "name": "booleanToString",
+        "type": 1,
+        "modifiers": [
+          1
+        ],
+        "returnType": "string"
+      },
+      {
+        "name": "equals",
+        "type": 1,
+        "modifiers": [
+          1
+        ],
+        "returnType": ""
+      },
+      {
+        "name": "parseBoolean",
+        "type": 1,
+        "modifiers": [
+          1
+        ],
+        "returnType": ""
+      },
+      {
+        "name": "stringValue",
+        "type": 1,
+        "modifiers": [
+          1
+        ],
+        "returnType": ""
+      },
+      {
+        "name": "longValue",
+        "type": 1,
+        "modifiers": [
+          1
+        ],
+        "returnType": ""
+      },
+      {
+        "name": "doubleValue",
+        "type": 1,
+        "modifiers": [
+          1
+        ],
+        "returnType": ""
+      },
+      {
+        "name": "intValue",
+        "type": 1,
+        "modifiers": [
+          1
+        ],
+        "returnType": ""
+      },
+      {
+        "name": "toString",
+        "type": 1,
+        "modifiers": [
+          1
+        ],
+        "returnType": ""
+      },
+      {
+        "name": "compareTo",
+        "type": 1,
+        "modifiers": [
+          1
+        ],
+        "returnType": "number"
+      },
+      {
+        "name": "bigDecimal",
+        "type": 1,
+        "modifiers": [
+          1
+        ],
+        "returnType": ""
+      },
+      {
+        "name": "signum",
+        "type": 1,
+        "modifiers": [
+          1
+        ],
+        "returnType": "number"
+      },
+      {
+        "name": "floatValue",
+        "type": 1,
+        "modifiers": [
+          1
+        ],
+        "returnType": "number"
+      },
+      {
+        "name": "lessThan",
+        "type": 1,
+        "modifiers": [
+          1
+        ],
+        "returnType": "boolean"
+      }
+    ]
+  },
+  {
+    "name": "Iterator",
+    "members": [
+      {
+        "name": "hasNext",
+        "type": 1,
+        "modifiers": [],
+        "returnType": "boolean"
+      },
+      {
+        "name": "next",
+        "type": 1,
+        "modifiers": [],
+        "returnType": "E"
+      }
+    ]
+  },
+  {
+    "name": "ListIterator",
+    "members": [
+      {
+        "name": "currentIndex",
+        "type": 0,
+        "modifiers": [
+          2
+        ],
+        "variableType": "number"
+      },
+      {
+        "name": "hasNext",
+        "type": 1,
+        "modifiers": [],
+        "returnType": "boolean"
+      },
+      {
+        "name": "next",
+        "type": 1,
+        "modifiers": [],
+        "returnType": "E"
+      }
+    ]
+  },
+  {
+    "name": "Iterable",
+    "members": [
+      {
+        "name": "iterator",
+        "type": 1,
+        "modifiers": [],
+        "returnType": "Iterator"
+      }
+    ]
+  },
+  {
+    "name": "Vector",
+    "members": [
+      {
+        "name": "data",
+        "type": 0,
+        "modifiers": [
+          2
+        ],
+        "variableType": "Array<E>"
+      },
+      {
+        "name": "setData",
+        "type": 1,
+        "modifiers": [],
+        "returnType": ""
+      },
+      {
+        "name": "size",
+        "type": 1,
+        "modifiers": [],
+        "returnType": "number"
+      },
+      {
+        "name": "get",
+        "type": 1,
+        "modifiers": [],
+        "returnType": "T"
+      },
+      {
+        "name": "add",
+        "type": 1,
+        "modifiers": [],
+        "returnType": "number"
+      },
+      {
+        "name": "isEmpty",
+        "type": 1,
+        "modifiers": [],
+        "returnType": "boolean"
+      },
+      {
+        "name": "iterator",
+        "type": 1,
+        "modifiers": [],
+        "returnType": "Iterator<E>"
+      }
+    ]
+  },
+  {
+    "name": "BaseComponent",
+    "members": [
+      {
+        "name": "borderPosition",
+        "type": 0,
+        "modifiers": [],
+        "variableType": "BorderPosition"
+      },
+      {
+        "name": "id",
+        "type": 0,
+        "modifiers": [],
+        "variableType": "string"
+      },
+      {
+        "name": "disabled",
+        "type": 0,
+        "modifiers": [],
+        "variableType": "boolean"
+      },
+      {
+        "name": "visible",
+        "type": 0,
+        "modifiers": [],
+        "variableType": "boolean"
+      },
+      {
+        "name": "fontColor",
+        "type": 0,
+        "modifiers": [],
+        "variableType": "string"
+      },
+      {
+        "name": "text",
+        "type": 0,
+        "modifiers": [],
+        "variableType": "string"
+      },
+      {
+        "name": "cssClass",
+        "type": 0,
+        "modifiers": []
+      },
+      {
+        "name": "cssClass",
+        "type": 0,
+        "modifiers": [],
+        "variableType": "string"
+      },
+      {
+        "name": "controlWidth",
+        "type": 0,
+        "modifiers": [],
+        "variableType": "string"
+      },
+      {
+        "name": "controlHeight",
+        "type": 0,
+        "modifiers": [],
+        "variableType": "string"
+      },
+      {
+        "name": "required",
+        "type": 0,
+        "modifiers": [],
+        "variableType": "boolean"
+      },
+      {
+        "name": "pattern",
+        "type": 0,
+        "modifiers": [],
+        "variableType": "string"
+      },
+      {
+        "name": "min",
+        "type": 0,
+        "modifiers": [],
+        "variableType": "number | string"
+      },
+      {
+        "name": "max",
+        "type": 0,
+        "modifiers": [],
+        "variableType": "number | string"
+      },
+      {
+        "name": "inputLocale",
+        "type": 0,
+        "modifiers": [],
+        "variableType": "string"
+      },
+      {
+        "name": "inputCharsets",
+        "type": 0,
+        "modifiers": [],
+        "variableType": "string"
+      },
+      {
+        "name": "focusOnActivation",
+        "type": 0,
+        "modifiers": [],
+        "variableType": "boolean"
+      },
+      {
+        "name": "focused",
+        "type": 0,
+        "modifiers": [],
+        "variableType": "boolean"
+      },
+      {
+        "name": "require",
+        "type": 0,
+        "modifiers": []
+      },
+      {
+        "name": "require",
+        "type": 0,
+        "modifiers": [],
+        "variableType": "boolean"
+      },
+      {
+        "name": "require",
+        "type": 0,
+        "modifiers": []
+      },
+      {
+        "name": "require",
+        "type": 0,
+        "modifiers": [],
+        "variableType": "boolean"
+      },
+      {
+        "name": "class",
+        "type": 1,
+        "modifiers": [],
+        "returnType": ""
+      },
+      {
+        "name": "cssClass",
+        "type": 0,
+        "modifiers": []
+      },
+      {
+        "name": "cssClass",
+        "type": 0,
+        "modifiers": [],
+        "variableType": "string"
+      },
+      {
+        "name": "hGrabSpace",
+        "type": 0,
+        "modifiers": [],
+        "variableType": "boolean"
+      },
+      {
+        "name": "vGrabSpace",
+        "type": 0,
+        "modifiers": [],
+        "variableType": "boolean"
+      },
+      {
+        "name": "_cssClass",
+        "type": 0,
+        "modifiers": [
+          2
+        ],
+        "variableType": "string"
+      },
+      {
+        "name": "compRef",
+        "type": 0,
+        "modifiers": [],
+        "variableType": "ComponentRef<any>"
+      },
+      {
+        "name": "enabled",
+        "type": 0,
+        "modifiers": []
+      },
+      {
+        "name": "enabled",
+        "type": 0,
+        "modifiers": [],
+        "variableType": "boolean"
+      },
+      {
+        "name": "enabled",
+        "type": 0,
+        "modifiers": []
+      },
+      {
+        "name": "enabled",
+        "type": 0,
+        "modifiers": [],
+        "variableType": "boolean"
+      },
+      {
+        "name": "customAttributes",
+        "type": 0,
+        "modifiers": [],
+        "variableType": "{[name: string]: any}"
+      },
+      {
+        "name": "styles",
+        "type": 0,
+        "modifiers": [],
+        "variableType": "{[name: string]: string}"
+      },
+      {
+        "name": "_uniqueId",
+        "type": 0,
+        "modifiers": [
+          2
+        ],
+        "variableType": "string"
+      },
+      {
+        "name": "_internalOnCommand",
+        "type": 0,
+        "modifiers": [
+          3
+        ],
+        "variableType": "() => void"
+      },
+      {
+        "name": "uniqueId",
+        "type": 0,
+        "modifiers": [],
+        "variableType": "string"
+      },
+      {
+        "name": "_children",
+        "type": 0,
+        "modifiers": [
+          2
+        ],
+        "variableType": "Map<string, BaseComponent>"
+      },
+      {
+        "name": "_childrenIndex",
+        "type": 0,
+        "modifiers": [
+          2
+        ],
+        "variableType": "Array<string>"
+      },
+      {
+        "name": "children",
+        "type": 0,
+        "modifiers": [],
+        "variableType": "Map<string, BaseComponent>"
+      },
+      {
+        "name": "ngAfterViewInit",
+        "type": 1,
+        "modifiers": [],
+        "returnType": ""
+      },
+      {
+        "name": "ngOnInit",
+        "type": 1,
+        "modifiers": [],
+        "returnType": ""
+      },
+      {
+        "name": "initBorderLayout",
+        "type": 1,
+        "modifiers": [
+          2
+        ],
+        "returnType": ""
+      },
+      {
+        "name": "ngOnDestroy",
+        "type": 1,
+        "modifiers": [],
+        "returnType": ""
+      },
+      {
+        "name": "cleanup",
+        "type": 1,
+        "modifiers": [
+          3
+        ],
+        "returnType": ""
+      },
+      {
+        "name": "getSession",
+        "type": 1,
+        "modifiers": [],
+        "returnType": "SessionService"
+      },
+      {
+        "name": "getChild",
+        "type": 1,
+        "modifiers": [],
+        "returnType": ""
+      },
+      {
+        "name": "setDisabled",
+        "type": 1,
+        "modifiers": [],
+        "returnType": ""
+      },
+      {
+        "name": "setVisible",
+        "type": 1,
+        "modifiers": [],
+        "returnType": ""
+      },
+      {
+        "name": "getDisabled",
+        "type": 1,
+        "modifiers": [],
+        "returnType": "boolean"
+      },
+      {
+        "name": "getEnabled",
+        "type": 1,
+        "modifiers": [],
+        "returnType": "boolean"
+      },
+      {
+        "name": "setEnabled",
+        "type": 1,
+        "modifiers": [],
+        "returnType": ""
+      },
+      {
+        "name": "getVisible",
+        "type": 1,
+        "modifiers": [],
+        "returnType": "boolean"
+      },
+      {
+        "name": "setText",
+        "type": 1,
+        "modifiers": [],
+        "returnType": "void"
+      },
+      {
+        "name": "setOnCommand",
+        "type": 1,
+        "modifiers": [],
+        "returnType": "void"
+      },
+      {
+        "name": "setAttribute",
+        "type": 1,
+        "modifiers": [],
+        "returnType": ""
+      },
+      {
+        "name": "getAttribute",
+        "type": 1,
+        "modifiers": [],
+        "returnType": "any"
+      },
+      {
+        "name": "requestFocus",
+        "type": 1,
+        "modifiers": [],
+        "returnType": ""
+      },
+      {
+        "name": "setFocus",
+        "type": 1,
+        "modifiers": [],
+        "returnType": ""
+      },
+      {
+        "name": "generateUniqueId",
+        "type": 1,
+        "modifiers": [
+          2
+        ],
+        "returnType": "string"
+      },
+      {
+        "name": "addChild",
+        "type": 1,
+        "modifiers": [
+          2
+        ],
+        "returnType": ""
+      },
+      {
+        "name": "getElement",
+        "type": 1,
+        "modifiers": [],
+        "returnType": "HTMLElement"
+      },
+      {
+        "name": "getText",
+        "type": 1,
+        "modifiers": [],
+        "returnType": "string"
+      },
+      {
+        "name": "setColor",
+        "type": 1,
+        "modifiers": [],
+        "returnType": ""
+      },
+      {
+        "name": "getColor",
+        "type": 1,
+        "modifiers": [],
+        "returnType": "string"
+      },
+      {
+        "name": "setBgColor",
+        "type": 1,
+        "modifiers": [],
+        "returnType": ""
+      },
+      {
+        "name": "setFontBold",
+        "type": 1,
+        "modifiers": [],
+        "returnType": ""
+      },
+      {
+        "name": "handleFocus",
+        "type": 1,
+        "modifiers": [],
+        "returnType": ""
+      },
+      {
+        "name": "handleClick",
+        "type": 1,
+        "modifiers": [],
+        "returnType": ""
+      },
+      {
+        "name": "handleKeyDown",
+        "type": 1,
+        "modifiers": [],
+        "returnType": ""
+      },
+      {
+        "name": "handleKeyUp",
+        "type": 1,
+        "modifiers": [],
+        "returnType": ""
+      },
+      {
+        "name": "handleMouseDown",
+        "type": 1,
+        "modifiers": [],
+        "returnType": ""
+      },
+      {
+        "name": "getCustomAttribute",
+        "type": 1,
+        "modifiers": [],
+        "returnType": "any"
+      },
+      {
+        "name": "setCustomAttribute",
+        "type": 1,
+        "modifiers": [],
+        "returnType": ""
+      },
+      {
+        "name": "getChildAt",
+        "type": 1,
+        "modifiers": [],
+        "returnType": "BaseComponent"
+      },
+      {
+        "name": "getChildCount",
+        "type": 1,
+        "modifiers": [],
+        "returnType": "number"
+      },
+      {
+        "name": "indexOfChild",
+        "type": 1,
+        "modifiers": [],
+        "returnType": "number"
+      },
+      {
+        "name": "insertChildAt",
+        "type": 1,
+        "modifiers": [],
+        "returnType": ""
+      },
+      {
+        "name": "emitInternalOnCommand",
+        "type": 1,
+        "modifiers": [
+          3
+        ],
+        "returnType": ""
+      },
+      {
+        "name": "registerClientEvent",
+        "type": 1,
+        "modifiers": [
+          3
+        ],
+        "returnType": ""
+      },
+      {
+        "name": "getTagName",
+        "type": 1,
+        "modifiers": [],
+        "returnType": "string"
+      },
+      {
+        "name": "getLocalName",
+        "type": 1,
+        "modifiers": [],
+        "returnType": "string"
+      },
+      {
+        "name": "getParent",
+        "type": 1,
+        "modifiers": [],
+        "returnType": ""
+      },
+      {
+        "name": "getValue",
+        "type": 1,
+        "modifiers": [],
+        "returnType": ""
+      },
+      {
+        "name": "removeAttribute",
+        "type": 1,
+        "modifiers": [],
+        "returnType": ""
+      },
+      {
+        "name": "setRequire",
+        "type": 1,
+        "modifiers": [],
+        "returnType": ""
+      },
+      {
+        "name": "setRequired",
+        "type": 1,
+        "modifiers": [],
+        "returnType": ""
+      },
+      {
+        "name": "setPattern",
+        "type": 1,
+        "modifiers": [],
+        "returnType": ""
+      },
+      {
+        "name": "setMin",
+        "type": 1,
+        "modifiers": [],
+        "returnType": ""
+      },
+      {
+        "name": "setMax",
+        "type": 1,
+        "modifiers": [],
+        "returnType": ""
+      },
+      {
+        "name": "getPattern",
+        "type": 1,
+        "modifiers": [],
+        "returnType": "string"
+      },
+      {
+        "name": "getMin",
+        "type": 1,
+        "modifiers": [],
+        "returnType": "any"
+      },
+      {
+        "name": "getMax",
+        "type": 1,
+        "modifiers": [],
+        "returnType": "any"
+      },
+      {
+        "name": "getInputLocale",
+        "type": 1,
+        "modifiers": [],
+        "returnType": "string"
+      },
+      {
+        "name": "setInputLocale",
+        "type": 1,
+        "modifiers": [],
+        "returnType": ""
+      },
+      {
+        "name": "getInputCharsets",
+        "type": 1,
+        "modifiers": [],
+        "returnType": "string"
+      },
+      {
+        "name": "setInputCharsets",
+        "type": 1,
+        "modifiers": [],
+        "returnType": ""
+      },
+      {
+        "name": "getId",
+        "type": 1,
+        "modifiers": [],
+        "returnType": "string"
+      },
+      {
+        "name": "setId",
+        "type": 1,
+        "modifiers": [],
+        "returnType": ""
+      },
+      {
+        "name": "setTitle",
+        "type": 1,
+        "modifiers": [],
+        "returnType": ""
+      },
+      {
+        "name": "setCssClass",
+        "type": 1,
+        "modifiers": [],
+        "returnType": ""
+      },
+      {
+        "name": "getRequired",
+        "type": 1,
+        "modifiers": [],
+        "returnType": "string | boolean"
+      },
+      {
+        "name": "destroyComponent",
+        "type": 1,
+        "modifiers": [],
+        "returnType": ""
+      },
+      {
+        "name": "toJson",
+        "type": 1,
+        "modifiers": [],
+        "returnType": "{}"
+      },
+      {
+        "name": "setJson",
+        "type": 1,
+        "modifiers": [
+          3
+        ],
+        "returnType": ""
+      },
+      {
+        "name": "resetId",
+        "type": 1,
+        "modifiers": [],
+        "returnType": ""
+      },
+      {
+        "name": "getChecked",
+        "type": 1,
+        "modifiers": [],
+        "returnType": "boolean"
+      },
+      {
+        "name": "setChecked",
+        "type": 1,
+        "modifiers": [],
+        "returnType": ""
+      },
+      {
+        "name": "setSelected",
+        "type": 1,
+        "modifiers": [],
+        "returnType": ""
+      },
+      {
+        "name": "getMaxLength",
+        "type": 1,
+        "modifiers": [],
+        "returnType": "number"
+      },
+      {
+        "name": "getMinLength",
+        "type": 1,
+        "modifiers": [],
+        "returnType": "number"
+      },
+      {
+        "name": "getChildren",
+        "type": 1,
+        "modifiers": [],
+        "returnType": ""
+      },
+      {
+        "name": "setValue",
+        "type": 1,
+        "modifiers": [],
+        "returnType": ""
+      },
+      {
+        "name": "cleanCss",
+        "type": 1,
+        "modifiers": [
+          2
+        ],
+        "returnType": ""
+      }
+    ]
+  },
+  {
+    "name": "ButtonComponent",
+    "members": [
+      {
+        "name": "focused",
+        "type": 0,
+        "modifiers": [],
+        "variableType": "boolean"
+      },
+      {
+        "name": "onCommand",
+        "type": 0,
+        "modifiers": [],
+        "variableType": ""
+      },
+      {
+        "name": "ngOnInit",
+        "type": 1,
+        "modifiers": [],
+        "returnType": ""
+      },
+      {
+        "name": "onClick",
+        "type": 1,
+        "modifiers": [],
+        "returnType": ""
+      },
+      {
+        "name": "onMouseDown",
+        "type": 1,
+        "modifiers": [],
+        "returnType": ""
+      },
+      {
+        "name": "toJson",
+        "type": 1,
+        "modifiers": [],
+        "returnType": "{}"
+      }
+    ],
+    "inheritFrom": "BaseComponent"
+  },
+  {
+    "name": "McoContainerModule",
+    "members": []
+  },
+  {
+    "name": "EventHandlerModule",
+    "members": []
+  },
+  {
+    "name": "SessionModule",
+    "members": []
+  },
+  {
+    "name": "JavaModule",
+    "members": []
+  },
+  {
+    "name": "BaseModule",
+    "members": []
+  },
+  {
+    "name": "ButtonModule",
+    "members": []
+  },
+  {
+    "name": "ViewModule",
+    "members": []
+  },
+  {
+    "name": "PanelComponent",
+    "members": [
+      {
+        "name": "layout",
+        "type": 0,
+        "modifiers": [],
+        "variableType": "Layout"
+      },
+      {
+        "name": "caption",
+        "type": 0,
+        "modifiers": [],
+        "variableType": "String"
+      },
+      {
+        "name": "evenlySpace",
+        "type": 0,
+        "modifiers": [],
+        "variableType": "boolean"
+      },
+      {
+        "name": "panelClasses",
+        "type": 0,
+        "modifiers": [],
+        "variableType": "Array<string>"
+      },
+      {
+        "name": "ngOnInit",
+        "type": 1,
+        "modifiers": [],
+        "returnType": ""
+      },
+      {
+        "name": "hasCaption",
+        "type": 0,
+        "modifiers": [],
+        "variableType": "boolean"
+      },
+      {
+        "name": "containerLayout",
+        "type": 0,
+        "modifiers": [],
+        "variableType": "boolean"
+      }
+    ],
+    "inheritFrom": "BaseComponent"
+  },
+  {
+    "name": "GridColumnDirective",
+    "members": [
+      {
+        "name": "vtGridColumn",
+        "type": 0,
+        "modifiers": [],
+        "variableType": "number"
+      },
+      {
+        "name": "ngOnInit",
+        "type": 1,
+        "modifiers": [],
+        "returnType": ""
+      }
+    ]
+  },
+  {
+    "name": "LayoutModule",
+    "members": []
+  },
+  {
+    "name": "TableCellDirective",
+    "members": []
+  },
+  {
+    "name": "TableHeaderDirective",
+    "members": []
+  },
+  {
+    "name": "HeaderDirective",
+    "members": [
+      {
+        "name": "text",
+        "type": 0,
+        "modifiers": [],
+        "variableType": "string"
+      },
+      {
+        "name": "cssClass",
+        "type": 0,
+        "modifiers": [],
+        "variableType": "string"
+      },
+      {
+        "name": "controlHeight",
+        "type": 0,
+        "modifiers": [],
+        "variableType": "string"
+      },
+      {
+        "name": "controlWidth",
+        "type": 0,
+        "modifiers": [],
+        "variableType": "string"
+      }
+    ]
+  },
+  {
+    "name": "CellDefinition",
+    "members": [
+      {
+        "name": "componentType",
+        "type": 0,
+        "modifiers": [],
+        "variableType": "ComponentType"
+      },
+      {
+        "name": "columnIndex",
+        "type": 0,
+        "modifiers": [],
+        "variableType": "number"
+      },
+      {
+        "name": "attributes",
+        "type": 0,
+        "modifiers": [],
+        "variableType": "{[name: string]: any}"
+      },
+      {
+        "name": "text",
+        "type": 0,
+        "modifiers": [],
+        "variableType": "string"
+      },
+      {
+        "name": "eventCallbacks",
+        "type": 0,
+        "modifiers": [],
+        "variableType": "{[name: string]: ()=>void}"
+      }
+    ]
+  },
+  {
+    "name": "TableColumnDirective",
+    "members": [
+      {
+        "name": "locked",
+        "type": 0,
+        "modifiers": [],
+        "variableType": "boolean"
+      },
+      {
+        "name": "enabled",
+        "type": 0,
+        "modifiers": [],
+        "variableType": "boolean"
+      },
+      {
+        "name": "sortable",
+        "type": 0,
+        "modifiers": [],
+        "variableType": "boolean"
+      },
+      {
+        "name": "cellTemplate",
+        "type": 0,
+        "modifiers": [],
+        "variableType": "TemplateRef<any>"
+      },
+      {
+        "name": "headerTemplate",
+        "type": 0,
+        "modifiers": [],
+        "variableType": "TemplateRef<any>"
+      },
+      {
+        "name": "headerDirective",
+        "type": 0,
+        "modifiers": [],
+        "variableType": "HeaderDirective"
+      },
+      {
+        "name": "header",
+        "type": 0,
+        "modifiers": []
+      },
+      {
+        "name": "header",
+        "type": 0,
+        "modifiers": [],
+        "variableType": "string"
+      },
+      {
+        "name": "header",
+        "type": 0,
+        "modifiers": []
+      },
+      {
+        "name": "header",
+        "type": 0,
+        "modifiers": [],
+        "variableType": "string"
+      },
+      {
+        "name": "_header",
+        "type": 0,
+        "modifiers": [],
+        "variableType": "string"
+      },
+      {
+        "name": "controlWidth",
+        "type": 0,
+        "modifiers": [],
+        "variableType": "string | number"
+      },
+      {
+        "name": "visible",
+        "type": 0,
+        "modifiers": [],
+        "variableType": "boolean"
+      },
+      {
+        "name": "isHeaderTemplate",
+        "type": 0,
+        "modifiers": [],
+        "variableType": ""
+      },
+      {
+        "name": "ngOnInit",
+        "type": 1,
+        "modifiers": [],
+        "returnType": ""
+      }
+    ]
+  },
+  {
+    "name": "TableSelectionEvent",
+    "members": []
+  },
+  {
+    "name": "TableComponent",
+    "members": [
+      {
+        "name": "dataSource",
+        "type": 0,
+        "modifiers": [],
+        "variableType": "Array<any>"
+      },
+      {
+        "name": "onChange",
+        "type": 0,
+        "modifiers": [],
+        "variableType": "EventEmitter<TableSelectionEvent>"
+      },
+      {
+        "name": "onDoubleClick",
+        "type": 0,
+        "modifiers": [],
+        "variableType": "EventEmitter<TableSelectionEvent>"
+      },
+      {
+        "name": "columns",
+        "type": 0,
+        "modifiers": [],
+        "variableType": "QueryList<TableColumnDirective>"
+      },
+      {
+        "name": "selectedRows",
+        "type": 0,
+        "modifiers": [],
+        "variableType": "Array<any>"
+      },
+      {
+        "name": "_prevSelectedRows",
+        "type": 0,
+        "modifiers": [
+          2
+        ],
+        "variableType": ""
+      },
+      {
+        "name": "ROW_INDEX_KEY",
+        "type": 0,
+        "modifiers": [
+          2
+        ],
+        "variableType": "string"
+      },
+      {
+        "name": "ngOnInit",
+        "type": 1,
+        "modifiers": [],
+        "returnType": ""
+      },
+      {
+        "name": "ngAfterViewInit",
+        "type": 1,
+        "modifiers": [],
+        "returnType": ""
+      },
+      {
+        "name": "getRowCount",
+        "type": 1,
+        "modifiers": [],
+        "returnType": "number"
+      },
+      {
+        "name": "selectRow",
+        "type": 1,
+        "modifiers": [],
+        "returnType": ""
+      },
+      {
+        "name": "setDisabled",
+        "type": 1,
+        "modifiers": [],
+        "returnType": ""
+      },
+      {
+        "name": "getDisabled",
+        "type": 1,
+        "modifiers": [],
+        "returnType": "boolean"
+      },
+      {
+        "name": "getSelectedRows",
+        "type": 1,
+        "modifiers": [],
+        "returnType": ""
+      },
+      {
+        "name": "getSelectedRowIndexes",
+        "type": 1,
+        "modifiers": [],
+        "returnType": "Array<number>"
+      },
+      {
+        "name": "handleRowSelection",
+        "type": 1,
+        "modifiers": [],
+        "returnType": ""
+      },
+      {
+        "name": "handleCellActivation",
+        "type": 1,
+        "modifiers": [],
+        "returnType": ""
+      },
+      {
+        "name": "appendRowIndexToRow",
+        "type": 1,
+        "modifiers": [],
+        "returnType": ""
+      },
+      {
+        "name": "refresh",
+        "type": 1,
+        "modifiers": [],
+        "returnType": ""
+      },
+      {
+        "name": "toJson",
+        "type": 1,
+        "modifiers": [],
+        "returnType": "{}"
+      }
+    ],
+    "inheritFrom": "BaseComponent"
+  },
+  {
+    "name": "LockedColumnDirective",
+    "members": [
+      {
+        "name": "ngOnInit",
+        "type": 1,
+        "modifiers": [],
+        "returnType": ""
+      }
+    ],
+    "inheritFrom": "TableColumnDirective"
+  },
+  {
+    "name": "TableModule",
+    "members": []
+  },
+  {
+    "name": "RadioButtonModule",
+    "members": []
+  },
+  {
+    "name": "CheckboxModule",
+    "members": []
+  },
+  {
+    "name": "ComboBoxModule",
+    "members": []
+  },
+  {
+    "name": "DialogModule",
+    "members": []
+  },
+  {
+    "name": "LabelModule",
+    "members": []
+  },
+  {
+    "name": "TabComponent",
+    "members": [
+      {
+        "name": "active",
+        "type": 0,
+        "modifiers": [],
+        "variableType": "boolean"
+      },
+      {
+        "name": "onCommand",
+        "type": 0,
+        "modifiers": [],
+        "variableType": ""
+      },
+      {
+        "name": "content",
+        "type": 0,
+        "modifiers": [],
+        "variableType": ""
+      },
+      {
+        "name": "ngOnInit",
+        "type": 1,
+        "modifiers": [],
+        "returnType": ""
+      },
+      {
+        "name": "toJson",
+        "type": 1,
+        "modifiers": [],
+        "returnType": ""
+      },
+      {
+        "name": "onClick",
+        "type": 1,
+        "modifiers": [],
+        "returnType": ""
+      }
+    ],
+    "inheritFrom": "BaseComponent"
+  },
+  {
+    "name": "TabPaneComponent",
+    "members": [
+      {
+        "name": "tabs",
+        "type": 0,
+        "modifiers": [],
+        "variableType": "QueryList<TabComponent>"
+      },
+      {
+        "name": "containerTemplate",
+        "type": 0,
+        "modifiers": [],
+        "variableType": "ViewContainerRef"
+      },
+      {
+        "name": "selectedTabIndex",
+        "type": 0,
+        "modifiers": [],
+        "variableType": "number"
+      },
+      {
+        "name": "ngAfterViewInit",
+        "type": 1,
+        "modifiers": [],
+        "returnType": ""
+      },
+      {
+        "name": "selectTab",
+        "type": 1,
+        "modifiers": [],
+        "returnType": ""
+      },
+      {
+        "name": "selectedTab",
+        "type": 0,
+        "modifiers": [],
+        "variableType": "TabComponent"
+      },
+      {
+        "name": "toJson",
+        "type": 1,
+        "modifiers": [],
+        "returnType": ""
+      }
+    ],
+    "inheritFrom": "BaseComponent"
+  },
+  {
+    "name": "TabPaneModule",
+    "members": []
+  },
+  {
+    "name": "HorizontalSeparatorComponent",
+    "members": [
+      {
+        "name": "borderColor",
+        "type": 0,
+        "modifiers": [],
+        "variableType": "string"
+      },
+      {
+        "name": "ngOnInit",
+        "type": 1,
+        "modifiers": [],
+        "returnType": ""
+      },
+      {
+        "name": "toJson",
+        "type": 1,
+        "modifiers": [],
+        "returnType": ""
+      }
+    ],
+    "inheritFrom": "BaseComponent"
+  },
+  {
+    "name": "HorizontalSeparatorModule",
+    "members": []
+  },
+  {
+    "name": "MomentUtils",
+    "members": [
+      {
+        "name": "timeZone",
+        "type": 0,
+        "modifiers": [
+          1
+        ],
+        "variableType": "string"
+      },
+      {
+        "name": "moment",
+        "type": 1,
+        "modifiers": [
+          1
+        ],
+        "returnType": "momentImported.Moment"
+      }
+    ]
+  },
+  {
+    "name": "DateFormat",
+    "members": [
+      {
+        "name": "SHORT",
+        "type": 0,
+        "modifiers": [
+          1,
+          5
+        ],
+        "variableType": "string"
+      },
+      {
+        "name": "MEDIUM",
+        "type": 0,
+        "modifiers": [
+          1,
+          5
+        ],
+        "variableType": "string"
+      },
+      {
+        "name": "LONG",
+        "type": 0,
+        "modifiers": [
+          1,
+          5
+        ],
+        "variableType": "string"
+      },
+      {
+        "name": "calendar",
+        "type": 0,
+        "modifiers": [
+          2
+        ],
+        "variableType": "momentImported.Moment"
+      },
+      {
+        "name": "getDateInstance",
+        "type": 1,
+        "modifiers": [
+          1
+        ],
+        "returnType": ""
+      },
+      {
+        "name": "isLenient",
+        "type": 0,
+        "modifiers": [
+          2
+        ],
+        "variableType": "boolean"
+      },
+      {
+        "name": "javaToMomentDateFormat",
+        "type": 1,
+        "modifiers": [
+          1
+        ],
+        "returnType": "string"
+      },
+      {
+        "name": "now",
+        "type": 1,
+        "modifiers": [
+          1
+        ],
+        "returnType": "momentImported.Moment"
+      },
+      {
+        "name": "format",
+        "type": 1,
+        "modifiers": [],
+        "returnType": "string"
+      },
+      {
+        "name": "parse",
+        "type": 1,
+        "modifiers": [],
+        "returnType": "momentImported.Moment"
+      },
+      {
+        "name": "setLenient",
+        "type": 1,
+        "modifiers": [],
+        "returnType": ""
+      },
+      {
+        "name": "setCalendar",
+        "type": 1,
+        "modifiers": [],
+        "returnType": ""
+      },
+      {
+        "name": "getCalendar",
+        "type": 1,
+        "modifiers": [],
+        "returnType": "momentImported.Moment"
+      }
+    ]
+  },
+  {
+    "name": "IllegalArgumentException",
+    "members": [],
+    "inheritFrom": "Error"
+  },
+  {
+    "name": "Integer",
+    "members": [
+      {
+        "name": "toString",
+        "type": 1,
+        "modifiers": [
+          1
+        ],
+        "returnType": ""
+      }
+    ]
+  },
+  {
+    "name": "Long",
+    "members": [
+      {
+        "name": "toString",
+        "type": 1,
+        "modifiers": [
+          1
+        ],
+        "returnType": "string"
+      }
+    ]
+  },
+  {
+    "name": "StringBuilder",
+    "members": [
+      {
+        "name": "_internalString",
+        "type": 0,
+        "modifiers": [
+          2
+        ],
+        "variableType": "string"
+      },
+      {
+        "name": "append",
+        "type": 1,
+        "modifiers": [],
+        "returnType": ""
+      },
+      {
+        "name": "toString",
+        "type": 1,
+        "modifiers": [],
+        "returnType": ""
+      },
+      {
+        "name": "clear",
+        "type": 1,
+        "modifiers": [],
+        "returnType": ""
+      },
+      {
+        "name": "destroy",
+        "type": 1,
+        "modifiers": [],
+        "returnType": ""
+      },
+      {
+        "name": "indexOf",
+        "type": 1,
+        "modifiers": [],
+        "returnType": "number"
+      },
+      {
+        "name": "substring",
+        "type": 1,
+        "modifiers": [],
+        "returnType": "string"
+      },
+      {
+        "name": "replace",
+        "type": 1,
+        "modifiers": [],
+        "returnType": "StringBuilder"
+      },
+      {
+        "name": "length",
+        "type": 1,
+        "modifiers": [],
+        "returnType": ""
+      },
+      {
+        "name": "charAt",
+        "type": 1,
+        "modifiers": [],
+        "returnType": "string"
+      },
+      {
+        "name": "deleteCharAt",
+        "type": 1,
+        "modifiers": [],
+        "returnType": "StringBuilder"
+      },
+      {
+        "name": "insert",
+        "type": 1,
+        "modifiers": [],
+        "returnType": "StringBuilder"
+      }
+    ]
+  },
+  {
+    "name": "LinkComponent",
+    "members": [
+      {
+        "name": "idName",
+        "type": 0,
+        "modifiers": [],
+        "variableType": "string"
+      },
+      {
+        "name": "onCommand",
+        "type": 0,
+        "modifiers": [],
+        "variableType": ""
+      },
+      {
+        "name": "ngOnInit",
+        "type": 1,
+        "modifiers": [],
+        "returnType": ""
+      },
+      {
+        "name": "onClick",
+        "type": 1,
+        "modifiers": [],
+        "returnType": ""
+      },
+      {
+        "name": "toJson",
+        "type": 1,
+        "modifiers": [],
+        "returnType": "{}"
+      }
+    ],
+    "inheritFrom": "BaseComponent"
+  },
+  {
+    "name": "LinkModule",
+    "members": []
+  },
+  {
+    "name": "ScrollPaneComponent",
+    "members": [
+      {
+        "name": "ngOnInit",
+        "type": 1,
+        "modifiers": [],
+        "returnType": ""
+      }
+    ],
+    "inheritFrom": "BaseComponent"
+  },
+  {
+    "name": "ScrollPaneModule",
+    "members": []
+  },
+  {
+    "name": "TestTabComponent",
+    "members": [
+      {
+        "name": "tabPane",
+        "type": 0,
+        "modifiers": [],
+        "variableType": "TabPaneComponent"
+      }
+    ]
+  },
+  {
+    "name": "TextAreaModule",
+    "members": []
+  },
+  {
+    "name": "TextFieldModule",
+    "members": []
+  },
+  {
+    "name": "TreeTableComponent",
+    "members": [
+      {
+        "name": "ngOnInit",
+        "type": 1,
+        "modifiers": [],
+        "returnType": ""
+      }
+    ],
+    "inheritFrom": "BaseComponent"
+  },
+  {
+    "name": "TreeTableModule",
+    "members": []
+  },
+  {
+    "name": "AppTestComponent",
+    "members": [],
+    "inheritFrom": "ViewComponent"
+  }
+]

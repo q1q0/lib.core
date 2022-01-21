@@ -1,0 +1,62 @@
+bs-dropdown-container ul.dropdown-menu.combobox-dropdown {
+  max-height: 225px;
+  margin-top: -3px !important;
+  overflow: auto;
+	overflow-x: hidden; /* For IE9 since it keeps showing HScroll bar */
+}
+
+.combobox-dropdown > li > a {
+  padding: 3px 10px 3px 5px;
+  font-size: 9px !important;
+  margin-bottom: 0 !important;
+}
+
+.combobox-dropdown > li > a:hover {
+  color: rgb(0, 0, 205);
+  background-color: rgb(255, 156, 0);
+}
+
+.vt-combo-box .form-control[readonly] {
+  background: #ffffff;
+  cursor: default;
+  margin-bottom: 3px;
+}
+
+bs-dropdown-container {
+  z-index: 10000;
+}
+
+.combo-btn, .combo-btn:hover {
+  color:#000000;
+  background-color: #ffffff;
+  border-color: #ccc;
+  margin-bottom: 3px;
+}
+
+.combo-btn[disabled] {
+  color: #808080;
+  background-color: #ccc;
+  border-color: #ccc;
+  margin-bottom: 3px;
+}
+
+.falseselect div.input-group .form-control{
+  color: #808080;
+  background-color: #eeeeee;
+}
+
+.mouse-hover {
+  background: rgb(255, 156, 0) !important;
+}
+
+.dropup .dropdown-menu {
+  margin-bottom: 26px
+}
+
+.vt-disabled-combobox {
+  background-color: #eee;
+}
+
+.vt-disabled-combobox:hover {
+  background-color: #eee;
+}

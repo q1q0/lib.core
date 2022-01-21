@@ -1,0 +1,58 @@
+<!-- panel -->
+<vt-panel #myComponent
+    *ngIf="elementDef.type === 'panel'"
+    [ngStyle]="elementDef.styles"
+    [ngClass]="elementDef.cssClass"
+    id="{{getId()}}"
+    [visible]="isVisible()"
+    (onContextMenu)="handleOnContextMenu()"
+    [customAttributes]="elementDef.customAttributes">
+    <ng-template [ngIf]="elementDef.children != null && elementDef.children.length > 0">
+        <vt-dynamic-component *ngFor="let compDef of elementDef.children" [elementDef]="compDef"></vt-dynamic-component>
+    </ng-template>
+</vt-panel>
+<!-- label -->
+<vt-label #myComponent
+    *ngIf="elementDef.type === 'label'"
+    [text]="elementDef.text"
+    [ngStyle]="elementDef.styles"
+    [ngClass]="elementDef.cssClass"
+    id="{{getId()}}"
+    [visible]="isVisible()"
+    [tooltip]="elementDef.tooltip"
+    (onContextMenu)="handleOnContextMenu()"
+    [customAttributes]="elementDef.customAttributes">
+</vt-label>
+<!-- textField -->
+<vt-text-field #myComponent
+    *ngIf="elementDef.type === 'textField'"
+    [text]="elementDef.text"
+    [value]="elementDef.value"
+    [ngStyle]="elementDef.styles"
+    [ngClass]="elementDef.cssClass"
+    id="{{getId()}}"
+    [visible]="isVisible()"
+    [editable]="elementDef.editable"
+    [enabled]="elementDef.enabled !== false"
+    (onContextMenu)="handleOnContextMenu()"
+    [customAttributes]="elementDef.customAttributes">
+</vt-text-field>
+<!-- button -->
+<vt-button #myComponent
+    *ngIf="elementDef.type === 'button'"
+    [text]="elementDef.text"
+    [ngStyle]="elementDef.styles"
+    [ngClass]="elementDef.cssClass"
+    id="{{getId()}}"
+    [visible]="isVisible()"
+    [customAttributes]="elementDef.customAttributes"
+    [enabled]="elementDef.enabled !== false"
+    (onCommand)="handleOnCommand()">
+</vt-button>
+<!-- horizontal -->
+<vt-horizontal-separator #myComponent
+    *ngIf="elementDef.type === 'horizontalSeparator'"
+    [ngStyle]="elementDef.styles">
+</vt-horizontal-separator>
+<!-- just a div -->
+<div *ngIf="elementDef.type === 'div'" [ngClass]="elementDef.cssClass"></div>

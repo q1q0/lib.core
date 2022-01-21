@@ -1,0 +1,54 @@
+<div [id]="id" class="btn-group dropdown vt-combo-box {{cssClass}} {{!disabled}}select"
+  [style.height]="controlHeight"
+  [style.width.px]="controlWidth"
+  [style.margin]="controlMargin"
+  [ngClass]="{'hidden': visible != true}"
+  (contextmenu)="handleOnContextMenu($event)"
+  #dropdown="bs-dropdown"
+  (onShown)="toggleStatus()"
+  (onHidden)="toggleStatus()"
+  dropdown [isDisabled]="disabled === true" container="body" [dropup]="isDropup">
+  <div class="input-group">
+    <input #input class="form-control combobox-input-box" type="text" [value]="selectedItemText" [style.text-align]="alignHorizontal"
+      (focusin)="inputFocusIn()" (focusout)="inputFocusOut($event)" (click)="onInputClick($event, dropdown)" [readonly]="disabled !== true" [disabled]="disabled" (keydown)="onKeyDown($event,dropdown)"/>
+    <span class="input-group-btn">
+      <button #button id="button" (mousedown)="onInputClick($event, dropdown)" (click)="preventDefault($event)" type="button" [ngClass]="{'btn': true, 'combo-btn dropdown-toggle': true, 'vt-disabled-combobox': disabled === true}" style="width: 20px" tabindex="-1">
+        <span class="caret"></span>
+      </button>
+    </span>
+  </div>
+  <ul
+    *dropdownMenu
+    [id]="dropdownElementId"
+    class="dropdown-menu combobox-dropdown"
+    role="menu"
+    [ngStyle]="dropdownMenuStyle"
+    vt-arrow-navigatable-container
+    [activeParent]="input"
+    (onTab)="dropdown.hide()"
+    (scroll)="handleScroll()"
+  >
+    <li *ngFor="let item of listItems; index as i">
+      <ng-template [ngIf]="item.visible !== false && item.visible !== 'false'">
+        <a *ngIf="item.text != null && item.text !== ''"
+          class="dropdown-item menuItem"
+          (mousedown)="preventDefault($event)"
+          (click)="selectItem(item, $event)"
+          [ngStyle]="hoveredItem == i ? hoveredStyle : defaultStyle"
+          (mouseover)="hoveredItem = i"
+          (keydown)="hoveredItem = i; onKeyDown($event,dropdown)"
+          vt-arrow-navigatable-item>{{item.text}}</a>
+        <a *ngIf="item.text == null || item.text === ''"
+          class="dropdown-item"
+          (mousedown)="preventDefault($event)"
+          [ngStyle]="hoveredItem == i ? hoveredStyle : defaultStyle"
+          (mouseover)="hoveredItem = i"
+          vt-arrow-navigatable-item
+          (keydown)="hoveredItem = i; onKeyDown($event,dropdown)"
+          (click)="selectItem(item, $event)">
+          &nbsp;
+        </a>
+      </ng-template>
+    </li>
+  </ul>
+</div>

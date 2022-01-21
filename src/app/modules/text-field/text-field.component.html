@@ -1,0 +1,33 @@
+<div
+  class="{{cssClass}}"
+  [ngStyle]="styles"
+  (contextmenu)="handleOnContextMenu($event)"
+  [ngClass]="{'vt-text-field': true, 'hidden': visible != true}">
+
+  <input [type]="type" [id]="id" #input
+    [ngClass]="{'input-date': type === 'date'}"
+    class="form-control"
+    [readonly]="(editable !== true && editable !== 'true') || textEditable !== true"
+    [attr.tabindex]="editable !== true && editable !== 'true' ? -1 : null"
+    [(ngModel)]="text"
+    [ngStyle]="styleVar"
+    [maxLength]="isIE9 ? 9999 : maxLength"
+    [style.width]="controlWidth"
+    [style.height]="controlHeight"
+    [style.textAlign]="alignHorizontal"
+    [style.border-color]="borderColor"
+    [style.margin-top]="marginTop"
+    [style.margin-left]="marginLeft"
+    [style.margin-bottom]="marginBottom"
+    [style.padding]="controlPadding"
+    (focusout)="onBlur($event, input.value)"
+    (focusin)="onFocus($event)"
+    (change)="_notifyInternalChangeCb()"
+    (mouseup)="handleMouseUp()"
+    (mousedown)="handleMouseDown()"
+    (keyup)="onInput($event, input.value)"
+    (keydown)="handleKeyDown($event)"
+    [required]="required"
+    [min]="min"
+    [max]="max"/>
+</div>

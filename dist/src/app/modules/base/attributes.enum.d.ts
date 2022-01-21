@@ -1,0 +1,20 @@
+export declare enum AttributesEnum {
+    ID = 0,
+    VISIBLE = 1,
+    CLASS = 2,
+    DISABLED = 3,
+    ENABLED = 4,
+    TEXT = 5,
+    COLOR = 6,
+    ON_COMMAND = 7,
+    REQUIRE = 8,
+    TITLE = 9,
+    FONT_BOLD = 10,
+    SELECTED = 11,
+    BG_COLOR = 12,
+    VALUE = 13,
+    PATTERN = 14,
+    MAX_LENGTH = 15,
+    MAX = 16,
+    MIN = 17
+}

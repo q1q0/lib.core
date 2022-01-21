@@ -1,0 +1,11 @@
+<a #menuItem *ngIf="hasMenuItems && display !== false" id="{{id}}" [ngClass]="{'dropdown-item': true}" tabindex="-1">{{text}}</a>
+<a #menuItem *ngIf="hasMenuItems !== true && display !== false" id="{{id}}" [ngClass]="{'dropdown-item': true}" [ngStyle]="menuStyles" tabindex="-1" (keydown.enter)="handleOnEnter($event)" (mouseenter)="handleMouseEnter($event)" (mousedown)="handleMouseDown($event)" (click)="handleOnClick($event)">{{text}}</a>
+<ng-template [ngIf]="hasMenuItems">
+  <ul #dropdownMenu class="dropdown-menu popup-menu" (keydown)="handleKeydown($event)" role="menu">
+    <ng-template ngFor [ngForOf]="menuItems" let-subItem>
+      <li *ngIf="subItem.text === '-' && subItem.display !== false" role="separator" class="divider"></li>
+      <li (mouseover)="dispSubmenu($event)" *ngIf="subItem.menuItems != null && subItem.menuItems.length > 0 && subItem.display !== false" class="dropdown-submenu" role="menuitem" vt-menu-item-comp [text]="subItem.text" [id]="subItem.id" [menuItems]="subItem.menuItems" [display]="subItem.display" [item]="subItem" [popupMenuId]="popupMenuId"></li>
+      <li (mouseover)="dispSubmenu($event)" *ngIf="subItem.text !== '-' && (subItem.menuItems == null || subItem.menuItems.length === 0) && subItem.display !== false" role="menuitem" vt-menu-item-comp [text]="subItem.text" [id]="subItem.id" [menuItems]="subItem.menuItems" [display]="subItem.display" [item]="subItem" [popupMenuId]="popupMenuId"></li>
+    </ng-template>
+  </ul>
+</ng-template>

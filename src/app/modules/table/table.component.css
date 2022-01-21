@@ -1,0 +1,129 @@
+.table-container {
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  border: 1px solid #888888;
+}
+
+table {
+  table-layout: auto;
+  width: 100% !important;
+  background-color: white;
+  border-collapse: separate;
+  margin-top:-2px !important;
+}
+
+table > thead > tr > th, table > tbody > tr > td {
+  min-width: 1px;
+  white-space: nowrap;
+  text-align: center;
+}
+
+table tr.selected-row > td {
+  background-color: #ccffff !important;
+  color: #1014ff !important;
+}
+
+table > thead > tr > th{
+  position: relative;
+  vertical-align: middle;
+  overflow: hidden;
+}
+
+
+.vt-locked-column {
+  position: relative;
+}
+
+table:not(#NgnsSCR_InfInf_StDateSch01_Tbl01):not(#NgnsSCR_InfInf_ProInfoSch_TblSchedule) th.vt-locked-column{
+  background-color: #4444AA !important;
+  z-index: 4; /*Because JColResizer's z-index is 5, this value must be less than that.*/
+}
+
+.table > thead > tr > th , .table > tfoot > tr > td, .ghost-header{
+  border-bottom: 1px solid #d8d8dc;
+  border-right: 1px solid #d8d8dc;
+  background-color: #6A6AFF;
+  color: #FFFFFF;
+  font-weight: normal;
+}
+
+.table > tbody > tr > td {
+  border-bottom: 1px solid #8080ff;
+  border-right: 1px solid #8080ff;
+  /* height: 10px; */
+  padding-left: 2px !important;
+  padding-right: 2px !important;
+}
+
+.table > tfoot > tr > td{
+  padding-left: 2px !important;
+  padding-right: 2px !important;
+  white-space: nowrap;
+}
+
+.table > tbody > tr:nth-child(odd) > td{
+  background: #FFFFFF;
+}
+.table > tbody > tr:nth-child(even) > td{
+  background: #E6E6E6;
+}
+
+.table > tfoot > tr{
+  height: 10px;
+}
+
+td {
+  display: table-cell;
+}
+
+table > thead > tr > th.auto-wrap {
+  white-space: normal;
+}
+
+/* .table th.drag {
+  background-color: #e07f7f!important;
+} */
+
+/* .table th.over {
+  background-color: #437935!important;
+} */
+
+.internal-sort {
+  padding:4px 0 4px 0;
+}
+
+.sort-up {
+  background:url(data:image/gif;base64,R0lGODlhCwALAJEAAAAAAP///xUVFf///yH5BAEAAAMALAAAAAALAAsAAAIRnC2nKLnT4or00Puy3rx7VQAAOw==) no-repeat center right;
+}
+
+.sort-down {
+  background:url(data:image/gif;base64,R0lGODlhCwALAJEAAAAAAP///xUVFf///yH5BAEAAAMALAAAAAALAAsAAAIPnI+py+0/hJzz0IruwjsVADs=) no-repeat center right;
+}
+
+table thead th.auto-wrap {
+  white-space: normal !important;
+  text-align: center;
+}
+
+/* [forceFixWidth]="true" 設定時に固定項目の幅にきいてしまうためコメントアウト
+th.vt-locked-column.nonForceFixWidth {
+  width: 1px !important;
+}*/
+/* added by NSD that cause coumn resize regression
+   [forceFixWidth]="true" 設定時に右端が伸びる対応
+th:nth-last-child(1).nonForceFixWidth {
+  width: 100% !important;
+}*/
+th.headerPadding{
+  padding-right: 14px;
+  padding-left: 14px;
+}
+.fake-table > thead {
+  visibility: visible!important;
+}
+
+/* bootstrap add margin-bottom: 20px, this mess up calculation for virtual scroll */
+.vt-virtual-scroll.table {
+  margin-bottom: 0px;
+}

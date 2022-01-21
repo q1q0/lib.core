@@ -1,0 +1,88 @@
+# Javascript Node CircleCI 2.0 configuration file
+#
+# Check https://circleci.com/docs/2.0/language-javascript/ for more details
+#
+version: 2
+jobs:
+  build:
+    docker:
+      # specify the version you desire here
+      - image: circleci/node:8-browsers
+
+      # Specify service dependencies here if necessary
+      # CircleCI maintains a library of pre-built images
+      # documented at https://circleci.com/docs/2.0/circleci-images/
+      # - image: circleci/mongo:3.4.4
+
+    working_directory: ~/repo
+
+    steps:
+      - checkout
+
+      # Download and cache dependencies
+      - restore_cache:
+          keys:
+            - v1-dependencies-{{ checksum "package.json" }}
+            # fallback to using the latest cache if no exact match is found
+            - v1-dependencies-
+
+      - run: sudo npm i -g npm-install-peers
+
+      - run: npm install
+
+      - run: npm-install-peers
+
+      #- run: npm run packagr
+
+      - save_cache:
+          paths:
+            - node_modules
+          key: v1-dependencies-{{ checksum "package.json" }}
+
+      # run tests!
+      - run: npm run test -- --watch=false --progress=false --browsers=ChromeHeadless
+      - run: npm run e2e --webdriver-update=false -- --protractor-config=./e2e/protractor-ci.conf.js
+  # docs:
+  #   docker:
+  #     # specify the version you desire here
+  #     - image: circleci/node:8-browsers
+
+  #     # Specify service dependencies here if necessary
+  #     # CircleCI maintains a library of pre-built images
+  #     # documented at https://circleci.com/docs/2.0/circleci-images/
+  #     # - image: circleci/mongo:3.4.4
+
+  #   working_directory: ~/repo
+
+  #   steps:
+  #     - checkout
+
+  #     # Download and cache dependencies
+  #     - restore_cache:
+  #         keys:
+  #           - v1-dependencies-{{ checksum "package.json" }}
+  #           # fallback to using the latest cache if no exact match is found
+  #           - v1-dependencies-
+
+  #     - run: sudo npm i -g npm-install-peers
+
+  #     - run: npm install
+
+  #     - run: npm-install-peers
+
+  #     - save_cache:
+  #         paths:
+  #           - node_modules
+  #         key: v1-dependencies-{{ checksum "package.json" }}
+
+  #     # Doc gen
+  #     - run: npm run docs
+  #     # Commit docs
+  #     - run: git config credential.helper 'cache --timeout=120'
+  #     - run: git config --global user.email "phongkien@gmail.com"
+  #     - run: git config --global user.name "phongkien"
+  #     - run: git add docs
+  #     - run: git commit -m "[ci skip] generated docs"
+  #     - run: git pull https://${GITHUB_USER_TOKEN}@github.com/weaveio/vivify.lib.core.git
+  #     - run: git push https://${GITHUB_USER_TOKEN}@github.com/weaveio/vivify.lib.core.git
+  #     # - run: yarn test

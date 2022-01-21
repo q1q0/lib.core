@@ -1,0 +1,87 @@
+
+<div #ghostHeader class="ghost-header" [ngStyle]="ghostHeaderStyle" style="display: none; position: absolute; z-index: 1; overflow: hidden;">
+  <!-- <table #fakeTable class="fake-table table" style="table-layout: fixed"></table> -->
+</div>
+<div #tableContainer class="table-container"
+  [ngClass]="cssClass"
+  [style.maxWidth.px]="controlWidth"
+  [style.height.px]="controlHeight"
+  [style.color]="fontColor"
+  [style.visibility]="visible ? 'visible' : 'hidden'"
+  [style.display]="visible ? '' : 'none'"
+  [ngStyle]="scrollContainerStyles"
+  [style.z-index]="'0'"
+>
+  <!-- Virtual scroll height -->
+  <div class="virtual-scroller-div" *ngIf="virtualScroll === true" [style.height.px]="_virtualScrollDivHeight" [style.width.px]="1"></div>
+  <div #tableWrapper class="table-scroller" [ngStyle]="tableStyles">
+    <table [ngClass]="{'table': true, 'tablesorter': true, 'header-fixed': true, 'vt-virtual-scroll': virtualScroll === true}" [id]="id" #table>
+      <thead #tableHead>
+        <tr class="dnd-moved">
+          <th *ngFor="let column of columns; index as columnIndex; trackBy: columnHeaderTrackByFn"
+            [ngClass]="{'headerPadding': isHeaderPadding === true,'nonForceFixWidth': forceFixWidth === false, 'vt-locked-column': column.locked === true, 'sort-up': column.sortDirection === 'asc' && column.locked !== true, 'sort-down': column.sortDirection === 'desc' && column.locked !== true, 'internal-sort': virtualScroll === true && enableSort !== false, 'auto-wrap': column.autoWrap === true}"
+            [style.height.px]="column.headerHeight"
+            [runOutsideZone]="false"
+            (vtOnCreate)="registerFauxElement('headcell', $event, columnIndex, column)"
+            [ngStyle]="column.styles"
+            (contextmenu)="handleHeaderOnContextMenu(columnIndex, $event)"
+            (click)="handleSort(column)"
+            [attr.data-sorter]="column.sortable">
+            <!-- If column has header as text, render as text -->
+            <span *ngIf="column.isHeaderTemplate === false">
+              {{column.header}}
+            </span>
+            <!-- otherwise, if it has custom rendering (i.e. they want to render checkbox, etc), we spit out the template to them -->
+            <ng-template [ngIf]="column.isHeaderTemplate === true" [ngTemplateOutlet]="column.headerTemplate" [ngTemplateOutletContext]="{columnIndex: columnIndex}"></ng-template>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- when there are data-->
+        <ng-template [ngIf]="dataSource != null && dataSource.length > 0">
+          <tr class="dnd-moved" *ngFor="let item of dataSource; index as rowIndex" [id]="buildRowId(item, rowIndex)" (vtOnCreate)="registerFauxElement('row', $event, rowIndex, item)" [attr.rowNo]="rowIndex" (mousedown)="toggleRowSelection($event, rowIndex, item)" (mouseup)="handleMouseUp($event, rowIndex, item)" (click)="onRowClick($event, rowIndex)" [ngClass]="{'selected-row': isSelectedRow(rowIndex, item)}" class="{{rowStyleClass(item)}}">
+            <td *ngFor="let column of columns; index as columnIndex" [ngClass]="{'vt-locked-column': column.locked === true}" (vtOnCreate)="registerFauxElement('cell', $event, columnIndex, column)" [attr.rowNo]="rowIndex" [ngStyle]="column.styles" [style.height.px]="column.cellHeight" [style.textAlign]="column.alignHorizontal" (contextmenu)="handleColumnOnContextMenu(column.cellTemplate, rowIndex, columnIndex, $event)">
+                <!--
+                  the user of the library will choose how to render the data, i.e. as a checkbox, textfield, or whatever, we spit
+                  this out via columns cellTemplate (ColumnDirective lift this up via CellDirective which lift the content of the
+                  host of the directive)
+                -->
+                <ng-template [ngTemplateOutlet]="column.cellTemplate?.template" [ngTemplateOutletContext]="{row: item, rowIndex: toRowIndex(rowIndex, item), columnIndex: columnIndex}"></ng-template>
+            </td>
+          </tr>
+          <!-- <tr *ngIf="showBlankRow === true"></tr> -->
+        </ng-template>
+        <!-- when there are no data-->
+        <ng-template [ngIf]="(dataSource == null || dataSource.length == 0) && (tableRow == null || tableRow.length === 0)">
+          <tr class="dnd-moved">
+            <td *ngFor="let column of columns; index as columnIndex" [ngClass]="{'vt-locked-column': column.locked === true}" [ngStyle]="column.styles" >&nbsp;</td>
+          </tr>
+          <!-- <tr></tr> -->
+        </ng-template>
+        <!-- custom table row -->
+        <ng-template [ngIf]="tableRow != null && tableRow.length > 0">
+          <tr *ngFor="let item of tableRow; index as rowIndex" class="dnd-moved {{item.cssClass}}" (vtOnCreate)="registerFauxElement('row', $event, rowIndex, item)" [attr.rowNo]="rowIndex" (mousedown)="toggleRowSelection($event, rowIndex, item)" (mouseup)="handleMouseUp($event, rowIndex, item)" [ngClass]="{'selected-row': isSelectedRow(rowIndex, item)}" class="{{rowStyleClass(item)}}">
+            <td *ngFor="let column of item.cellTemplates; index as columnIndex" (vtOnCreate)="registerFauxElement('cell', $event, columnIndex, column)" [attr.rowNo]="rowIndex" (contextmenu)="handleColumnOnContextMenu(column, rowIndex, columnIndex, $event)">
+              <ng-template [ngTemplateOutlet]="column.template" [ngTemplateOutletContext]="{row: item, rowIndex: rowIndex, columnIndex: columnIndex}"></ng-template>
+            </td>
+          </tr>
+        </ng-template>
+      </tbody>
+      <ng-template [ngIf]="footerRow != null && footerRow.cellTemplates != null && footerRow.cellTemplates.length > 0">
+        <tfoot #tableFoot>
+          <tr class="dnd-moved dummyFooter" style="display:none;">
+            <td *ngFor="let column of footerRow.cellTemplates; index as columnIndex"
+                style="background-color: #ffffff !important; border-color:#ffffff !important; height: 0px;"></td>
+          </tr>
+          <tr class="dnd-moved">
+            <td *ngFor="let column of footerRow.cellTemplates; index as columnIndex" [style.display]="'table-cell'" [style.textAlign]="column.alignHorizontal">
+              <ng-template [ngTemplateOutlet]="column.template" [ngTemplateOutletContext]="{columnIndex: columnIndex}"></ng-template>
+            </td>
+          </tr>
+        </tfoot>
+      </ng-template>
+    </table>
+    <!-- <div *ngIf="virtualScroll === true" [style.height.px]="controlHeight" [style.width.px]="controlWidth" [ngStyle]="virtualScrollProgressStyles"></div> -->
+  </div>
+</div>
+

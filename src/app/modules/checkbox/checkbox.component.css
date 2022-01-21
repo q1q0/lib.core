@@ -1,0 +1,8 @@
+/* div >label >span {
+    vertical-align: middle !important;
+} */
+
+div >label >input {
+    position: static;
+    vertical-align: middle;
+}

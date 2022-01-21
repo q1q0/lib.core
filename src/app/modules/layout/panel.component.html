@@ -1,0 +1,19 @@
+<div [id]="id"
+  [style.color]="fontColor"
+  [style.borderColor]="borderColor"
+  [style.borderWidth]="borderWidth"
+  [style.borderStyle]="borderStyle"
+  [style.height]="resizeHeight"
+  [style.overflow]="controlOverflow"
+  [style.width]="panelWidth"
+  [style.min-width.px]="panelMinWidth"
+  [style.min-height]="panelMinHeight"
+  [style.float]="controlFloat"
+  [style.margin-left]="marginLeft"
+  [style.margin-right]="marginRight"
+  [ngClass]="panelClasses">
+  <h1 *ngIf="hasCaption === true" class="panel-caption">{{caption}}</h1>
+  <div class="{{noGrid ?'':'row'}} {{noGutter ?'row-no-gutters':''}}" [style.height]="divHeight" [style.width.px]="contentDisplayWidth" [style.padding]="controlPadding" [style.text-align]="alignHorizontal">
+    <ng-content></ng-content>
+  </div>
+</div>

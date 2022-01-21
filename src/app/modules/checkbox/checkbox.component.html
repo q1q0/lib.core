@@ -1,0 +1,16 @@
+<div class="checkbox {{cssClass}} {{(disabled ===true) ? 'disabled':''}}" [ngClass]="{'hidden': visible != true}" (contextmenu)="handleOnContextMenu($event)">
+  <label>
+    <input class="input-checkbox" 
+      [disabled]="disabled" 
+      [id]="id" 
+      type="checkbox" 
+      value="" 
+      (keydown)="handleKeyDown($event)" 
+      (click)="onClick($event)" 
+      (mousedown)="onMouseDown($event)" 
+      (change)="handleStateChange()" 
+      [(ngModel)]="checked" 
+      [required]="required">
+    <span [style.margin-left.px]="marginLeft" [style.margin-right.px]="marginRight">{{text}}</span>
+  </label>
+</div>

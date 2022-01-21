@@ -1,0 +1,12 @@
+<div class="radio {{cssClass}} {{cssClass}} {{(disabled ===true) ? 'disabled':''}}" [ngClass]="{'hidden': visible != true}" (contextmenu)="handleOnContextMenu($event)">
+  <label>
+    <input class="input-radio" type="radio" [name]="group" [id]="id" [value]="value" [checked]="checked"
+      [disabled]="disabled"
+      (click)="onClick($event)"
+      (mousedown)="onMouseDown($event)"
+      [required]="required"
+      (keydown)="handleKeyDown($event)"
+    >
+    <span [style.margin-left.px]="marginLeft" [style.margin-right.px]="marginRight">{{text}}</span>
+  </label>
+</div>

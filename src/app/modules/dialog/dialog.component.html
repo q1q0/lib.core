@@ -1,0 +1,55 @@
+<div #myModal [vtDraggable]="draggable" [modal]="modal" [id]="id" [ngClass]="bsModalClass" tabindex="-1" role="dialog" title=""
+[style.minWidth.px]="controlWidth"
+[style.minHeight.px]="controlHeight"
+>
+<div
+  #modalDialog
+  [style.height.px]="controlHeight"
+  [style.width.px]="controlWidth"
+  class="modal-dialog"
+  [ngClass]="cssClass"
+  role="document">
+  <div class="disabled-dialog" [ngStyle]="{'display': disabled ? 'block' : 'none'}" (click)="onClickDisableContent($event)"></div>
+  <div #modalContent class="modal-content" [style.height.px]="controlHeight">
+    <div class="modal-header" #draggablePanel>
+      <button type="button" *ngIf="!isMaximize" class="close"
+        data-dismiss="modal"
+        aria-label="maximize"
+        (click)="maximize($event)"
+        tabindex="-1">
+        <span aria-hidden="true"><div class="icon-maximize"></div></span>
+      </button>
+      <button type="button" *ngIf="isMaximize" class="close"
+        data-dismiss="modal"
+        aria-label="maximize"
+        (click)="maximize($event)"
+        tabindex="-1">
+        <span aria-hidden="true"><div class="icon-unmaximize"></div></span>
+      </button>
+      <button type="button"  *ngIf="isUnMaximize" class="close"
+        data-dismiss="modal"
+        aria-label="unmaximize"
+        (click)="minimize($event)"
+        tabindex="-1">
+        <span aria-hidden="true"><div class="icon-unmaximize"></div></span>
+      </button>
+      <button type="button" *ngIf="!isUnMaximize" class="close"
+        data-dismiss="modal"
+        aria-label="minimize"
+        (click)="minimize($event)"
+        tabindex="-1">
+        <span aria-hidden="true"><div class="icon-minimize"></div></span>
+      </button>
+      <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close" (mousedown)="handleOnClosing()" (click)="close($event)"><span aria-hidden="true">&times;</span></button> -->
+      <h4 class="modal-title" onselectstart="return false" unselectable="on" (dblclick)="maximize($event)">{{ title }}</h4>
+    </div>
+    <div #modalBody class="modal-body" [style.height.px]="modalBodyHeight" [style.height]="modalBodyPercentHeight" [style.minHeight]="modalBodyMinHeight">
+      <div [style.width.percent]="100" [style.width]="modalBodyDivWidth" [style.height]="modalBodyDivHeight" #viewContainer (mousedown)="handleMouseDown()">
+        <ng-content></ng-content>
+      </div>
+    </div>
+  </div><!-- /.modal-content -->
+</div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+<div *ngIf= " modal == true || modal == 'true'" class="backdrop" (click)="onClickBackdrop($event)">
+</div>

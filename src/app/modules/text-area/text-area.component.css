@@ -1,0 +1,11 @@
+.form-control[disabled]{
+  color: #808080 !important;
+}
+
+textarea[readonly]{
+  color: #646464 !important;
+}
+textarea[readonly]:focus{
+  -ms-user-select: none;
+  pointer-events: none;
+}

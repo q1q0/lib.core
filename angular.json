@@ -1,0 +1,174 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "version": 1,
+  "newProjectRoot": "projects",
+  "projects": {
+    "vivify-core-components": {
+      "root": "",
+      "sourceRoot": "src",
+      "projectType": "application",
+      "prefix": "vt",
+      "schematics": {},
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/vivify-core-components",
+            "index": "src/index.html",
+            "main": "src/main.ts",
+            "polyfills": "src/polyfills.ts",
+            "tsConfig": "src/tsconfig.app.json",
+            "assets": [
+              "src/favicon.ico",
+              "src/assets"
+            ],
+            "styles": [
+              "src/styles.css",
+              "src/assets/theme.default.min.css",
+              "src/assets/jquery-ui-1.12.1/jquery-ui.css"
+            ],
+            "scripts": [
+              "node_modules/jquery/dist/jquery.min.js",
+              "src/assets/jquery-ui-1.12.1/jquery-ui.min.js",
+              "src/assets/jquery.treetable.js",
+              "src/assets/colResizable-1.6.js",
+              "src/assets/dragndrop.table.columns.min.js",
+              "src/assets/jquery.tablesorter.min.js",
+              "src/assets/jquery.tablesorter.widgets.min.js",
+              "node_modules/clipboard-polyfill/build/clipboard-polyfill.js"
+            ]
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "vivify-core-components:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "vivify-core-components:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "vivify-core-components:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "codeCoverageExclude": [
+              "src/polyfills.ts",
+              "src/app/modules/base/attribute-change-event.ts",
+              "src/app/modules/base/ui-document.ts",
+              "src/app/modules/base/moment-utils.ts",
+              "src/app/modules/base/logger.ts",
+              "src/app/modules/keyboard/arrow-navigatable-container.directive.ts",
+              "src/app/modules/keyboard/arrow-navigatable-item.directive.ts",
+              "src/app/modules/tree-table/html-element-wrapper.ts",
+              "src/app/modules/dynamic/dynamic.component.ts",
+              "src/app/modules/dialog/draggable.directive.ts",
+              "src/app/modules/view/view.component.ts",
+              "src/app/modules/table/locked-column.directive.ts",
+              "src/app/modules/table/table-selection-event.ts",
+              "src/app/modules/java/string-builder.ts",
+              "src/app/modules/java/hashtable.ts",
+              "src/app/modules/java/hash-map.ts",
+              "src/app/modules/java/vector.ts",
+              "src/app/modules/base/custom-attribute.ts",
+              "src/app/modules/base/base.component.ts",
+              "src/app/modules/popup-menu/menu-item-builder.ts",
+              "src/app/modules/popup-menu/context-menu.service.ts",
+              "src/app/modules/table/table.component.ts",
+              "src/app/modules/session/session.service.ts",
+              "src/app/modules/mco-container/mco-container.service.ts",
+              "src/app/modules/dialog/dialog.component.ts"
+            ],
+            "main": "src/test.ts",
+            "polyfills": "src/polyfills.ts",
+            "tsConfig": "src/tsconfig.spec.json",
+            "karmaConfig": "src/karma.conf.js",
+            "styles": [
+              "src/styles.css"
+            ],
+            "scripts": [
+              "node_modules/jquery/dist/jquery.min.js",
+              "src/assets/jquery-ui-1.12.1/jquery-ui.min.js",
+              "src/assets/jquery.treetable.js",
+              "src/assets/colResizable-1.6.js",
+              "src/assets/dragndrop.table.columns.min.js",
+              "src/assets/jquery.tablesorter.min.js",
+              "src/assets/jquery.tablesorter.widgets.min.js",
+              "node_modules/clipboard-polyfill/build/clipboard-polyfill.js"
+            ],
+            "assets": [
+              "src/favicon.ico",
+              "src/assets"
+            ]
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "src/tsconfig.app.json",
+              "src/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "vivify-core-components-e2e": {
+      "root": "e2e/",
+      "projectType": "application",
+      "architect": {
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "e2e/protractor.conf.js",
+            "devServerTarget": "vivify-core-components:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "vivify-core-components:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": "e2e/tsconfig.e2e.json",
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    }
+  },
+  "defaultProject": "vivify-core-components"
+}

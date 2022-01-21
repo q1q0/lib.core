@@ -1,0 +1,16 @@
+.content {
+		padding: 2em 4em;
+}
+
+:host ::ng-deep {
+	section {
+		&.top-pane {
+			background: green;
+		}
+
+		&.bottom-pane {
+			background: red;
+		}
+	}
+}
+   

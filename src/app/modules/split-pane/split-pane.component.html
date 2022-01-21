@@ -1,0 +1,20 @@
+<div
+  class="vt-split-pane"
+  id="{{id}}"
+  [ngClass]="cssClass"
+  [style.height]="controlHeight"
+  [style.width.px]="controlWidth"
+  #splitPaneContainer
+>
+  <section #topPaneSection class="top-pane" *ngIf="topPane != null" [ngStyle]="topPaneStyles">
+    <ng-container *ngTemplateOutlet="topPane.content" #containerTopTemplate></ng-container>
+  </section>
+  <div #splitPaneDivider [ngClass]="dividerCssClass" [ngStyle]="dividerStyles">
+    <span class="arrow left pull-left" (click)="moveDown()">∨</span>
+    <span class="arrow center" style="font-size: 10pt;vertical-align: top;">＝</span>
+    <span class="arrow right pull-right" (click)="moveUp()">∧</span>
+  </div>
+  <section #bottomPaneSection class="bottom-pane" *ngIf="bottomPane != null" [ngStyle]="bottomPaneStyles">
+    <ng-container *ngTemplateOutlet="bottomPane.content" #containerBottomTemplate></ng-container>
+  </section>
+</div>

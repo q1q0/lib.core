@@ -1,0 +1,7 @@
+<div #scrollDiv [id]="id" class="vt-scroll-pane {{cssClass}}"
+  [ngClass]="{'hidden': visible != true}"
+  [ngStyle]="styles"
+  (contextmenu)="handleOnContextMenu($event)"
+  (keydown)="handleKeyDown($event)">
+  <ng-content></ng-content>
+</div>

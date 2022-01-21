@@ -1,0 +1,17 @@
+.vt-text-field {
+    display: inline-block;
+}
+
+.vt-text-field input.form-control {
+  width: 100%;
+}
+
+.vt-text-field > input{
+  margin-bottom: 3px;
+}
+
+/* 非活性あるいはreadonlyの場合設定 */
+.vt-text-field > input[readonly]{
+  color: #646464;
+  pointer-events: none;
+}

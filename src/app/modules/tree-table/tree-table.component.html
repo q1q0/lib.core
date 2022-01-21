@@ -1,0 +1,23 @@
+<div [id]="id"
+class="vt-tree-table {{cssClass}}"
+[style.width]="controlWidth"
+[style.height]="controlHeight"
+[style.border-style]="borderStyle">
+    <table
+        class="table jq-tree-table" [style.border-width]="borderWidth">
+        <thead #tableHeader>
+            <tr>
+                <th scope="col" *ngFor="let col of columnDefs" [style.width.px]="col.controlWidth">
+                    {{col.headerName}}
+                </th>
+            </tr>
+        </thead>
+        <tbody #tableBody>
+            <tr *ngFor="let row of rowData; let i = index">
+                <td *ngFor="let col of columnDefs">
+                    {{row[col.field]}}
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
